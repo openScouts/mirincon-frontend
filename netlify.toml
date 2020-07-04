@@ -1,0 +1,9 @@
+[build]
+  publish = "dist"
+[build.environment]
+  YARN_FLAGS = "--no-ignore-optional"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
