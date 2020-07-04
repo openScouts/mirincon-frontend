@@ -1,0 +1,40 @@
+@import 'mirincon/colores';
+@import 'mirincon/botones';
+@import 'mirincon/table';
+@import 'mirincon/card_counter';
+@import 'mirincon/shadow';
+@import 'mirincon/timeline';
+@import 'mirincon/toaster';
+
+// @import 'mirincon/coreUi/navbar';
+// @import 'mirincon/coreUi/card';
+body {
+  background-color: #f7f7f7 !important; // Esto lo hago porque aveces no carta lo suficientemente alto la pagina y se ver cortada
+  color: #5e5e5e !important;
+}
+.table {
+  margin-bottom: 0px !important;
+}
+.table th,
+.table td {
+  border-top: 1px solid #dee2e6 !important;
+}
+@media (max-width: 750px) {
+  td:first-child {
+    border-top: 1px solid #dee2e6 !important;
+    // margin-top: 10px !important;
+  }
+}
+/*
+.btn {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+}*/
+
+.VueTables > .row {
+  // hago que el paginado de VueTables--server no quede pegado al borde
+  padding: 5px !important;
+}
+/*
+.main .container-fluid {
+  padding: 0 5px !important;
+}*/

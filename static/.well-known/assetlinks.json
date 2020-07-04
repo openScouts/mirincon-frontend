@@ -1,0 +1,7 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "package_name": "ar.com.openscouts.mirincon.twa",
+    "sha256_cert_fingerprints":["2C:CC:2B:57:21:1C:7F:0D:A0:71:BE:A8:EF:A1:28:98:60:21:03:88:FB:A2:2F:10:26:B6:0B:4C:9E:76:FE:2C"]
+  }
+}]
