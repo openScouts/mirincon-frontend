@@ -56,9 +56,9 @@ Vue.component('select-ramas', (r) =>
 )
 
 Vue.component('input-persona', (r) =>
-  require.ensure([], () => r(require('~/components/genericos/form/InputPersona.vue').default), 'js/component/')
+  require.ensure([], () => r(require('~/components/genericos/form/InputPersona.vue').default), 'js/component')
 )
 
 Vue.component('vacio', (r) =>
-  require.ensure([], () => r(require('~/components/genericos/Vacio.vue').default), 'js/component/')
+  require.ensure([], () => r(require('~/components/genericos/Vacio.vue').default), 'js/component')
 )
