@@ -1,7 +1,7 @@
 <template>
   <ContentWrapper>
     <template slot="titulo">
-      <titulo>Lugares</titulo>
+      <titulo>Cargar Nuevo Ciclo de Programa</titulo>
     </template>
     <div class="card card-accent-primary">
       <div class="card-body">
@@ -13,40 +13,35 @@
               <error input="titulo" />
             </div>
             <div class="form-group">
-              <label class="control-label">Link</label>
-              <input
-                v-model="form.link"
-                class="form-control input-sm"
-                type="text"
-                required
-                placeholder="Ingrese Link"
-              />
-              <error input="link" />
+              <label>Adjuntar Ciclo de Programa (Solo se permiten archivos hasta 5 Mb)</label>
+              <b-form-file id="adjunto" placeholder="Seleccione el adjunto" />
+              <error input="adjunto" />
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label class="control-label">Fecha Inicio</label>
-              <b-form-input v-model="form.f_inicio" type="date" placeholder="Fecha Inicio" />
-              <error input="f_inicio" />
+              <b-form-input v-model="form.f_desde" type="date" placeholder="Fecha Inicio" />
+              <error input="f_desde" />
             </div>
             <div class="form-group">
               <label class="control-label">Fecha Fin</label>
-              <b-form-input v-model="form.f_fin" type="date" placeholder="Fecha Fin" />
-              <error input="f_fin" />
+              <b-form-input v-model="form.f_hasta" type="date" placeholder="Fecha Fin" />
+              <error input="f_hasta" />
             </div>
           </div>
+
           <div class="form-group col-md-12">
-            <label class="control-label">Detalle</label>
+            <label class="control-label">Descripcion</label>
             <textarea
-              v-model="form.detalle"
+              v-model="form.descripcion"
               rows="3"
               class="form-control input-sm"
               type="text"
               required
-              placeholder="Ingrese Detalle "
+              placeholder="Ingrese descripcion "
             />
-            <error input="detalle" />
+            <error input="descripcion" />
           </div>
           <template v-if="$route.params.uuid">
             <button v-promise-btn class="btn-block btn btn-success" @click="submitUpdate">Actualizar Novedad</button>
@@ -70,30 +65,19 @@ export default {
       form: {}, // aca van los datos del formulario completado
     }
   },
-  created() {
-    if (this.$route.params.uuid) {
-      this.getDatos()
-    }
-  },
+  created() {},
   methods: {
-    getDatos() {
-      this.$axios.get('/administrador/novedades/' + this.$route.params.uuid).then((response) => {
-        this.form = response.data
-      })
-    },
     submitCrear() {
+      const formulario = new FormData()
+      formulario.append('descripcion', this.form.descripcion)
+      formulario.append('titulo', this.form.titulo)
+      formulario.append('f_desde', this.form.f_desde)
+      formulario.append('f_hasta', this.form.f_hasta)
+      formulario.append('adjunto', document.getElementById('adjunto').files[0])
+      formulario.append('descripcion', this.form.descripcion)
+
       return this.$axios
-        .post('/administrador/novedades', this.form)
-        .then(() => {
-          this.$router.back()
-        })
-        .catch((err) => {
-          return err
-        })
-    },
-    submitUpdate() {
-      return this.$axios
-        .put('/administrador/novedades', this.form)
+        .post('/programa/ciclos', formulario)
         .then(() => {
           this.$router.back()
         })

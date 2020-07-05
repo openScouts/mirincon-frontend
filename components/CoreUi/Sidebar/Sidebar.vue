@@ -96,6 +96,11 @@
           </template>
         </template>
       </ul>
+      <ul class="nav">
+        <SidebarNavItem>
+          <SidebarNavLink name="sss" url="xxx" />
+        </SidebarNavItem>
+      </ul>
       <slot />
     </nav>
     <SidebarFooter />

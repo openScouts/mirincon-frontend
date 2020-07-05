@@ -28,16 +28,9 @@
         </template>
 
         <template slot="opciones" slot-scope="props">
-          <nuxt-link
-            class="btn btn-success btn-sm"
-            :to="'/administrador/novedades/formulario/' + props.row.uuid"
-            title="Editar"
-          >
-            <i class="far fa-edit"></i>
-          </nuxt-link>
-          <button class="btn btn-danger btn-sm" title="Borrar" @click="borrar(props.row.uuid)">
-            <i class="far fa-trash-alt"></i>
-          </button>
+          <download title="Borrar" :url="'/programa/descargar/' + props.row.uuid">
+            <i class="fas fa-file-pdf" /> Descargar
+          </download>
         </template>
       </v-server-table>
     </div>
@@ -59,17 +52,6 @@ export default {
         },
       },
     }
-  },
-  methods: {
-    borrar(novedadUuid) {
-      this.$axios
-        .delete('/administrador/novedades', {
-          data: { uuid: novedadUuid },
-        })
-        .then(() => {
-          this.$refs.tabla.refresh()
-        })
-    },
   },
 }
 </script>

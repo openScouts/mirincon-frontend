@@ -31,3 +31,12 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
 }
+
+/// Mensaje de error, de las validacion de los campos form
+.form-group div.text-danger {
+  padding: 2px;
+  margin: 2px;
+  @extend .bg-danger;
+  color: #fff !important;
+  border-radius: 2px;
+}

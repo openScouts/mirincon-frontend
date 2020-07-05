@@ -18,11 +18,7 @@
               <hr />
               <button v-promise-btn class="btn btn-success" @click="enviarAdjunto">Subir y Enviar Trabajo</button>
               <b-button variant="danger" @click="$router.back()">Cancelar</b-button>
-              <!--
-              <b-button :to="'/formacion/trabajos/participante/' + this.$route.params.uuid" variant="danger">
-                Cancelar
-              </b-button>
-            --></div>
+            </div>
             <div :class="{ active: tab === 2 }" class="tab-pane" role="tabpanel">
               <hr />
               <label>Redactar trabajo</label>

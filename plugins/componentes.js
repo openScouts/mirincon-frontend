@@ -62,3 +62,7 @@ Vue.component('input-persona', (r) =>
 Vue.component('vacio', (r) =>
   require.ensure([], () => r(require('~/components/genericos/Vacio.vue').default), 'js/component')
 )
+
+Vue.component('download', (r) =>
+  require.ensure([], () => r(require('~/components/genericos/Download.vue').default), 'js/component')
+)

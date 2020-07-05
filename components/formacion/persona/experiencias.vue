@@ -28,6 +28,14 @@
         <template v-slot:cell(fecha)="data">{{ data.value | Date }}</template>
         <template v-slot:cell(opciones)="data">
           <template v-if="data.item.certificado">
+            <download
+              :url="'/formacion/participantes/certificado/' + data.item.uuid"
+              :nombre="data.item.fecha + '_' + data.item.experiencia + '_' + '.pdf'"
+            >
+              <i class="fas fa-file-pdf" />
+              Certificado
+            </download>
+            <!--
             <button
               :key="data.item.uuid"
               v-promise-btn
@@ -38,6 +46,7 @@
               <i class="fas fa-file-pdf" />
               Certificado
             </button>
+            -->
           </template>
         </template>
       </b-table>
