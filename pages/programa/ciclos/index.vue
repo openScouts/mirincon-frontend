@@ -9,14 +9,9 @@
     <hr />
     <div class="card card-accent-primary">
       <v-server-table ref="tabla" :columns="columns" :options="options" url="/programa/ciclos">
-        <template slot="mensaje" slot-scope="props">
-          <strong>{{ props.row.titulo }}</strong>
-          <br />
-          {{ props.row.detalle }}
-          <br />
-          link : {{ props.row.link }}
+        <template slot="organismos" slot-scope="props">
+          {{ props.row.full }}
         </template>
-
         <template slot="rama" slot-scope="props">
           <div-rama :rama="props.row.rama"></div-rama>
         </template>
@@ -44,7 +39,7 @@ export default {
   },
   data() {
     return {
-      columns: ['organismo', 'rama', 'fecha', 'opciones'],
+      columns: ['organismos', 'rama', 'fecha', 'opciones'],
       options: {
         filterable: false,
         params: {
