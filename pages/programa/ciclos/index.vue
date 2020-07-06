@@ -10,7 +10,7 @@
     <div class="card card-accent-primary">
       <v-server-table ref="tabla" :columns="columns" :options="options" url="/programa/ciclos">
         <template slot="organismos" slot-scope="props">
-          {{ props.row.full }}
+          {{ props.row.organismos.full }}
         </template>
         <template slot="rama" slot-scope="props">
           <div-rama :rama="props.row.rama"></div-rama>
