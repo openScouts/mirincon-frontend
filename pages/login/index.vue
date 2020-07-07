@@ -82,7 +82,6 @@ export default {
         if (response.status === 200) {
           this.items = JSON.parse(JSON.stringify(response.data))
           this.form.organismo = Object.keys(this.items)[0]
-          console.log(1111111111111)
           this.paso = 2
           return Promise.resolve(true)
         } else if (response.status === 202) {
