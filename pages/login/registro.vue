@@ -14,9 +14,7 @@
         </span>
       </b-input-group-prepend>
       <b-form-input v-model="documento" name="documento" type="number" placeholder="Ingrese su Documento" />
-      <error input="documento" />
     </b-input-group>
-
     <div v-if="paso === 2" title="Ingreso de Datos">
       <h5 class="text-center">Bienvenid@ {{ formulario.nombre }}</h5>
       <p v-if="formulario.organismo_id">
@@ -171,6 +169,9 @@ export default {
       paso: 1,
     }
   },
+  mounted() {
+    this.$options.$errors = {}
+  },
   methods: {
     validaDocumento() {
       this.error = null
@@ -210,6 +211,7 @@ export default {
       // @todo A FUTURO METERLE RECAPCHA
       this.formulario.documento = this.documento
       this.$axios.post('/auth/registrarse', this.formulario).then(() => {
+        this.$router.replace('/login')
         // si el registro fue correcto le hago hacer login directamente !!
         this.$auth
           .loginWith('local', {

@@ -78,16 +78,23 @@ export default {
   methods: {
     validaDni() {
       this.paso = 1
-      return this.$axios.post('/auth/get_organismos', this.form).then((response) => {
-        if (response.status === 200) {
-          this.items = JSON.parse(JSON.stringify(response.data))
-          this.form.organismo = Object.keys(this.items)[0]
-          this.paso = 2
-          return Promise.resolve(true)
-        } else if (response.status === 202) {
-          return Promise.reject(response.data)
-        }
-      })
+      return this.$axios
+        .post('/auth/get_organismos', this.form)
+        .then((response) => {
+          console.log(response.status)
+          if (response.status === 200) {
+            this.items = JSON.parse(JSON.stringify(response.data))
+            this.form.organismo = Object.keys(this.items)[0]
+            this.paso = 2
+            return Promise.resolve(true)
+          } else if (response.status === 202) {
+            return Promise.reject(response.data)
+          }
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error)
+        })
     },
     recuperClave() {
       if (confirm('Esta Seguro que quiere cambiar la Clave ?')) {
