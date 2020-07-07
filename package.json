@@ -1,9 +1,16 @@
 {
   "name": "mirinconscout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sistema de Gestion Scout",
-  "author": "Andres Lacquaniti",
   "private": true,
+  "authors": [
+    {
+      "name": "Andres Lacquaniti",
+      "email": "hal@caseroft.com.ar",
+      "homepage": "http://www.openscouts.com.ar",
+      "role": "Developer"
+    }
+  ],
   "scripts": {
     "dev": "npm run local",
     "local": "nuxt -c ./config/local.config.js",
