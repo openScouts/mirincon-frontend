@@ -9,14 +9,15 @@
     <hr />
     <div class="card card-accent-primary">
       <v-server-table ref="tabla" :columns="columns" :options="options" url="/programa/ciclos">
-        <template slot="organismos" slot-scope="props">
-          {{ props.row.organismos.full }}
+        <template slot="detalle" slot-scope="props">
+          <template v-if="!user.is.grupo"> Organismo: {{ props.row.organismos.full }} </template>
+          <div-rama :rama="props.row.rama" class="border-bottom pb-1 mb-1">Rama: </div-rama>
+          <strong> {{ props.row.titulo }}</strong>
+          <p>{{ props.row.descripcion }}</p>
         </template>
-        <template slot="rama" slot-scope="props">
-          <div-rama :rama="props.row.rama"></div-rama>
-        </template>
-
         <template slot="fecha" slot-scope="props">
+          <span>Fecha de creacion: {{ props.row.creacion | Date }}</span>
+          <br />
           <span> Comienza: {{ props.row.f_desde | Date }}</span>
           <br />
           <span> Finaliza: {{ props.row.f_hasta | Date }}</span>
@@ -39,7 +40,7 @@ export default {
   },
   data() {
     return {
-      columns: ['organismos', 'rama', 'fecha', 'opciones'],
+      columns: ['detalle', 'fecha', 'opciones'],
       options: {
         filterable: false,
         params: {
