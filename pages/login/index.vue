@@ -109,7 +109,7 @@ export default {
         this.$noti('Error al Hacer Login', 'danger')
         this.error = { mensaje: 'Error al Hacer Login' }
       })
-      this.$router.replace('/main/')
+      //  this.$router.replace('/main/')
     },
   },
 }
