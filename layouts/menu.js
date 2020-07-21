@@ -51,6 +51,12 @@ export default {
           icon: 'fas os-saac-isologo',
           acl: 'gestion.legajos',
         },
+        {
+          name: 'Reportes',
+          url: '/gestion/reportes',
+          icon: 'fas os-saac-isologo',
+          acl: 'gestion.reportes',
+        },
       ],
     },
     {

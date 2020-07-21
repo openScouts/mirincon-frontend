@@ -74,6 +74,7 @@ module.exports = {
     'bootstrap-vue/nuxt',
     ['@nuxtjs/pwa', { icon: true }], //, { icon: false }
     '@nuxtjs/dotenv',
+    'nuxt-leaflet',
   ],
   bootstrapVue: {
     bootstrapCSS: false, // Or `css: false`

@@ -19,7 +19,7 @@
             :before-generate="startDownload"
             :before-finish="finishDownload"
             :fields="xls_campos"
-            :name="evento.nombre + ' ' + evento.f_inicio_evento + '.xls'"
+            :name="evento.evento + ' ' + evento.evento_fin + '.xls'"
             class="btn btn-success m-2 mt-4"
           >
             Exportar
@@ -163,6 +163,7 @@ export default {
           },
         },
         Documento: 'persona.documento',
+        Nacimiento: 'persona.nacimiento',
         Nombre: 'persona.apellidoynombre',
         Categoria: 'persona.categoria',
         rama: {

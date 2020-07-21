@@ -47,10 +47,10 @@
           <template v-slot:cell(check)="data">
             <b-form-checkbox v-model="form.participantes" :value="data.item.uuid" switch />
           </template>
-          <template v-slot:cell(rel_persona.apellidoynombre)="data">
-            {{ data.item.rel_persona.apellidoynombre }}
+          <template v-slot:cell(persona)="data">
+            {{ data.item.persona.apellidoynombre }}
           </template>
-          <template v-slot:cell(rel_persona.rel_funciones)="data">
+          <template v-slot:cell(persona.funciones)="data">
             <div-funciones :funciones="data.value" />
           </template>
         </b-table>
@@ -84,11 +84,11 @@ export default {
             label: 'check',
           },
           {
-            key: 'rel_persona.apellidoynombre',
+            key: 'persona',
             label: 'Datos',
           },
           {
-            key: 'cherel_persona.rel_funcionesck',
+            key: 'persona.funciones',
             label: 'Funciones',
           },
           {
@@ -105,7 +105,7 @@ export default {
     cursos() {
       this.form.participantes = [] // blanqueo por cada cambio de opcion en el combo
       this.$axios
-        .get('/formacion/participantes/listado/', {
+        .get('/formacion/participantes', {
           params: {
             curso_uuid: this.cursos,
             estado: 'TP',
@@ -126,7 +126,7 @@ export default {
 
   methods: {
     getDatos() {
-      this.$axios.get('/formacion/trabajos/crear/cursos_validos').then((response) => {
+      this.$axios.get('/formacion/trabajos/crear/cursos').then((response) => {
         this.listado_crear = response.data
       })
     },
