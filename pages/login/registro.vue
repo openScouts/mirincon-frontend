@@ -21,18 +21,7 @@
         <strong>Organismos:</strong>
         Nro. {{ formulario.organismo_id }} - {{ formulario.organismo }}
       </p>
-      <template v-if="no_existe">
-        <div class="form-group">
-          <label class="control-label">Ingrese su Documento</label>
-          <input v-model="formulario.documento" type="number" class="form-control input-sm" required="required" />
-        </div>
-        <error input="documento" />
-        <div class="form-group">
-          <label class="control-label">Ingrese su Nombre Completo</label>
-          <input v-model="formulario.nombre" class="form-control input-sm" required="required" type="text" />
-        </div>
-        <error input="nombre" />
-      </template>
+
       <div class="form-group">
         <label>Ingrese su Fecha de Nacimiento</label>
         <div class="row">
@@ -87,34 +76,6 @@
           </div>
         </div>
       </div>
-      <template v-if="no_existe">
-        <div class="form-group">
-          <label class="control-label">Numero de Grupo</label>
-          <input v-model="formulario.organismo_id" type="number" class="form-control input-sm" required="required" />
-        </div>
-        <error input="organismo_id" />
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label class="control-label">Numero de Distrito</label>
-              <input v-model="formulario.distrito_id" type="number" class="form-control input-sm" required="required" />
-            </div>
-            <error input="distrito_id" />
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label class="control-label">Numero de zona</label>
-              <input v-model="formulario.zona_id" type="number" class="form-control input-sm" required="required" />
-            </div>
-            <error input="zona_id" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="control-label">Funcion</label>
-          <input v-model="formulario.funcion" class="form-control input-sm" required="required" type="text" />
-        </div>
-        <error input="funcion" />
-      </template>
       <div class="form-group">
         <label class="control-label">Ingrese su Email</label>
         <input v-model="formulario.email" type="email" class="form-control input-sm" required="required" />
@@ -141,10 +102,10 @@
         <error input="password_confirmation" />
       </div>
     </div>
-    <button v-if="paso === 1" class="btn btn-success btn-block" @click="validaDocumento">
+    <button v-if="paso === 1" v-promise-btn class="btn btn-success btn-block" @click="validaDocumento">
       Validar Documento
     </button>
-    <button v-if="paso === 2" class="btn btn-success btn-block" @click="completarRegistro">
+    <button v-if="paso === 2" v-promise-btn class="btn btn-success btn-block" @click="completarRegistro">
       Completar Registro
     </button>
     <hr v-if="paso === 1" />
@@ -163,7 +124,6 @@ export default {
     return {
       formulario: {},
       documento: '',
-      no_existe: false,
       error: '',
       info: '',
       paso: 1,
@@ -182,18 +142,11 @@ export default {
         this.error = 'Debe ingresar un documento para continuar'
         return false
       }
-      this.$axios
+      return this.$axios
         .post('/auth/valida_documento', { documento: this.documento })
         .then((response) => {
           this.info = null
-          if (response.data.estado === 'ERROR') {
-            this.error = response.data.error_generico
-            this.paso = 1
-          } else if (response.data.estado === 'no_existe') {
-            this.no_existe = true
-            this.formulario.no_existe = true
-            this.paso = 2
-          } else {
+          if (response.data.estado !== 'ERROR') {
             this.formulario = response.data
             this.paso = 2
           }
@@ -207,25 +160,10 @@ export default {
       this.$router.push({ path: '/' })
     },
     completarRegistro() {
-      //
       // @todo A FUTURO METERLE RECAPCHA
       this.formulario.documento = this.documento
-      this.$axios.post('/auth/registrarse', this.formulario).then(() => {
+      return this.$axios.post('/auth/registrarse', this.formulario).then(() => {
         this.$router.replace('/login')
-        // si el registro fue correcto le hago hacer login directamente !!
-        this.$auth
-          .loginWith('local', {
-            data: {
-              documento: this.formulario.documento,
-              password: this.formulario.password,
-            },
-          })
-          .then(() => {
-            this.$router.replace('/main/')
-          })
-          .catch((e) => {
-            this.error = e + ''
-          })
       })
     },
   },
