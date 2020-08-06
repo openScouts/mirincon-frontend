@@ -45,6 +45,10 @@
           </b-table>
         </div>
       </div>
+      <div v-if="!grid.tableData.length" class="col-12">
+        <br />
+        <alerta>Si la persona esta afiliada en otro organismo, solo podra buscar por documento</alerta>
+      </div>
     </b-modal>
   </div>
 </template>
