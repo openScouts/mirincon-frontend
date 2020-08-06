@@ -7,7 +7,7 @@
         <template v-slot:cell(rama)="data">
           <div-rama :rama="data.value" />
         </template>
-        <template v-slot:cell(estado)="data">
+        <template v-slot:cell(opciones)="data">
           <template v-if="$can('formacion.maestro_scout.abm')">
             <nuxt-link
               :to="'/formacion/maestro_scout/formulario/' + data.item.uuid"
@@ -19,7 +19,7 @@
             </nuxt-link>
             &nbsp;&nbsp;
           </template>
-
+          <!--
           <p v-if="$moment(data.item.vencimiento, 'YYYY-MM-DD').isBefore()" class="text-danger">
             <i class="far fa-frown" />
             Vencida
@@ -27,9 +27,9 @@
           <p v-else class="text-success">
             <i class="far fa-hand-peace" />
             Vigente
-          </p>
+          </p>  -->
         </template>
-        <template v-slot:cell(vencimiento)="data">{{ data.value | Date }}</template>
+        <!-- <template v-slot:cell(vencimiento)="data">{{ data.value | Date }}</template> -->
       </b-table>
     </template>
     <template v-else>
@@ -52,8 +52,7 @@ export default {
           { key: 'nro_registro', label: 'Registro N°' },
           { key: 'rama', label: 'Rama' },
           'linea',
-          'vencimiento',
-          'estado',
+          'opciones',
         ],
         items: [],
       },

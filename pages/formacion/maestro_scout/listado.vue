@@ -16,6 +16,7 @@
               />
             </b-form-group>
           </b-col>
+          <!--
           <b-col sm="12" lg="3" class="mb-0">
             <b-form-group label="Estado de la IM" class="mb-0">
               <b-form-select v-model="options.params.estado" size="sm" class="mb-3">
@@ -25,6 +26,7 @@
               </b-form-select>
             </b-form-group>
           </b-col>
+          -->
           <b-col sm="12" lg="3" class="mb-0">
             <b-form-group label="Rama" class="mb-0">
               <select-ramas v-model="options.params.rama" clase="custom-select-sm" />
@@ -123,24 +125,21 @@
   </ContentWrapper>
 </template>
 
-<style>
-#tabla_listado_im .VueTables >>> * tr th:nth-child(1) {
-  width: 20% !important;
+<style scoped>
+.VueTables >>> * tr th:nth-child(1) {
+  width: 30% !important;
 }
-#tabla_listado_im .VueTables >>> * tr th:nth-child(2) {
-  width: 25% !important;
+.VueTables >>> * tr th:nth-child(1) {
+  width: 30% !important;
 }
-#tabla_listado_im .VueTables >>> * tr th:nth-child(3) {
-  width: 20% !important;
+.VueTables >>> * tr th:nth-child(3) {
+  width: 30% !important;
 }
-#tabla_listado_im .VueTables >>> * tr th:nth-child(4) {
-  width: 15% !important;
-}
-#tabla_listado_im .VueTables >>> * tr th:nth-child(5) {
+.VueTables >>> * tr th:nth-child(4) {
   width: 10% !important;
 }
 
-#tabla_listado_im tr td {
+.VueTables >>> *tr td {
   vertical-align: middle !important;
 }
 </style>
@@ -152,7 +151,7 @@ export default {
   },
   data() {
     return {
-      columns: ['apellidoynombre', 'funciones', 'Insigania de Madera', 'estado', 'opciones'],
+      columns: ['apellidoynombre', 'funciones', 'Insigania de Madera', 'opciones'],
       options: {
         filterable: false,
         pagination: { chunk: 10 },
