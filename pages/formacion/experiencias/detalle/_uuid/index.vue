@@ -10,9 +10,9 @@
         <template slot="acciones">
           <template v-if="puedeEditar()">
             <b-dropdown text="Acciones" variant="success" size="sm">
-              <b-dropdown-item :to="`/formacion/experiencias/detalle/${$route.params.uuid}/edicion_masiva`"
-                >Edicion Masiva</b-dropdown-item
-              >
+              <b-dropdown-item :to="`/formacion/experiencias/detalle/${$route.params.uuid}/edicion_masiva`">
+                Edicion Masiva
+              </b-dropdown-item>
             </b-dropdown>
           </template>
         </template>
