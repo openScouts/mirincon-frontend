@@ -131,13 +131,13 @@ export default {
           url: '/formacion/cursantes',
           icon: 'fas os-area-programa',
           acl: 'formacion.cursantes',
-        },
+        } /*
         {
           name: 'Habilitaciones',
           url: '/formacion/habilitaciones',
           icon: 'fas os-accion-habilitacion',
           acl: 'formacion.habilitaciones',
-        },
+        }, */,
         {
           name: 'Carga Manual',
           url: '/formacion/carga_manual',
