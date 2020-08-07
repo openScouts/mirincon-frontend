@@ -182,7 +182,7 @@ export default {
           if (result.value) {
             this.$axios
               .delete('/eventos/inscriptos', {
-                params: { uuid: inscriptoUuid },
+                params: { inscripto_uuid: inscriptoUuid },
               })
               .then(() => {
                 this.getEventos()
