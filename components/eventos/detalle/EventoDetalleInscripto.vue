@@ -19,7 +19,7 @@
             :before-generate="startDownload"
             :before-finish="finishDownload"
             :fields="xls_campos"
-            :name="evento.evento + ' ' + evento.evento_fin + '.xls'"
+            :name="$moment(evento.evento_fin).format('YYYYMMDD') + ' - ' + evento.evento + '.xls'"
             class="btn btn-success m-2 mt-4"
           >
             Exportar
@@ -140,7 +140,7 @@ export default {
             let out = ''
             try {
               value.forEach((element) => {
-                out = element.organismo_full
+                out = out + element.organismo_full + ' <br/>'
               })
             } catch (e) {
               out = ''
@@ -154,7 +154,7 @@ export default {
             let out = ''
             try {
               value.forEach((element) => {
-                out = element.organismo_full + ' - ' + element.nombre
+                out = out + element.organismo_full + ' - ' + element.funcion + ' <br/>'
               })
             } catch (e) {
               return out
@@ -163,7 +163,12 @@ export default {
           },
         },
         Documento: 'persona.documento',
-        Nacimiento: 'persona.nacimiento',
+        Nacimiento: {
+          field: 'persona.nacimiento',
+          callback: (value) => {
+            return this.$moment(value).format('DD/MM/YYYY')
+          },
+        },
         Nombre: 'persona.apellidoynombre',
         Categoria: 'persona.categoria',
         rama: {
