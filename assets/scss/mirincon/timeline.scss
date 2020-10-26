@@ -2,7 +2,7 @@ ul.timeline {
   list-style-type: none;
   position: relative;
 }
-ul.timeline:before {
+ul.timeline::before {
   content: ' ';
   background: #d4d9df;
   display: inline-block;
@@ -16,7 +16,7 @@ ul.timeline > li {
   margin: 20px 0;
   padding-left: 20px;
 }
-ul.timeline > li:before {
+ul.timeline > li::before {
   content: ' ';
   background: white;
   display: inline-block;

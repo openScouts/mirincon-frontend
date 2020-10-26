@@ -19,6 +19,7 @@
 * {
   scrollbar-width: thin !important;
 }
+
 .sidebar {
   background-color: #2979ff !important;
   color: #fff !important;
@@ -40,11 +41,11 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    height: 00px;
+    height: 0;
     background-color: #fff !important;
     background-clip: content-box;
     border-color: transparent;
     border-style: solid;
-    border-width: 0px 0px;
+    border-width: 0;
   }
 }
