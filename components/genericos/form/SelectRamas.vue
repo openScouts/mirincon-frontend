@@ -2,7 +2,7 @@
   <select
     v-model="rama"
     :class="'form-control ramas ' + clase"
-    style="font-family: 'caseroft-iconos-scout', 'sans-serif';"
+    style="font-family: caseroft-iconos-scout, sans-serif"
     @input="
       (e) => {
         $emit('input', e.target.value)

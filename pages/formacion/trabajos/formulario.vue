@@ -35,8 +35,8 @@
         </div>
         <b-form-group label="Consigna del Trabajo Practico:">
           <error input="consigna" />
-          <div style="height: 200px;">
-            <quill-editor v-model="form.consigna" style="height: 150px;" />
+          <div style="height: 200px">
+            <quill-editor v-model="form.consigna" style="height: 150px" />
           </div>
         </b-form-group>
         <button v-promise-btn class="btn btn-block btn-success" @click="crearTrabajo">Crear Trabajo</button>

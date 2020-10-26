@@ -28,9 +28,7 @@
           <div class="col-sm-4">
             <div class="form-group">
               <select v-model="formulario.anio" class="form-control" required="required">
-                <option value selected="selected">
-                  Seleccione un Año
-                </option>
+                <option value selected="selected">Seleccione un Año</option>
                 <template v-for="n in 2005">
                   <option v-if="n >= 1920" :key="n" :value="n">
                     {{ n }}
@@ -42,9 +40,7 @@
           <div class="col-sm-4">
             <div class="form-group">
               <select v-model="formulario.mes" class="form-control" required="required">
-                <option value selected="selected">
-                  Seleccione un Mes
-                </option>
+                <option value selected="selected">Seleccione un Mes</option>
                 <option value="1">Enero</option>
                 <option value="2">Febrero</option>
                 <option value="3">Marzo</option>
@@ -63,9 +59,7 @@
           <div class="col-sm-4">
             <div class="form-group">
               <select v-model="formulario.dia" class="form-control" required="required">
-                <option value selected="selected">
-                  Seleccione un Dia
-                </option>
+                <option value selected="selected">Seleccione un Dia</option>
                 <template v-for="n in 31">
                   <option v-if="n >= 1" :key="n" :value="n">
                     {{ n }}
@@ -136,7 +130,6 @@ export default {
     validaDocumento() {
       this.error = null
       this.info = 'Procesando Datos, aguarde un momento por favor'
-
       if (this.documento.length === 0) {
         this.info = null
         this.error = 'Debe ingresar un documento para continuar'
@@ -163,7 +156,7 @@ export default {
       // @todo A FUTURO METERLE RECAPCHA
       this.formulario.documento = this.documento
       return this.$axios.post('/auth/registrarse', this.formulario).then(() => {
-        this.$router.replace('/login')
+        this.$router.replace('/')
       })
     },
   },

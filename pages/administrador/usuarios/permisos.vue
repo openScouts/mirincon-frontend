@@ -20,7 +20,7 @@
               <template v-if="validaPermiso(permiso.nombre, data.item.rel_permisos)">
                 <b-badge :key="permiso.id" pill variant="success" class="m-1">
                   {{ permiso.nombre }}
-                  <a class="btn-link" style="cursor: pointer;" @click="permisoQuitar(data.item.id, permiso.id)">
+                  <a class="btn-link" style="cursor: pointer" @click="permisoQuitar(data.item.id, permiso.id)">
                     <i class="far fa-trash-alt" />
                   </a>
                 </b-badge>
@@ -28,7 +28,7 @@
               <template v-else>
                 <b-badge :key="permiso.id" pill variant="light" class="m-1">
                   {{ permiso.nombre }}
-                  <a class="btn-link" style="cursor: pointer;" @click="permisoAgregar(data.item.id, permiso.id)">
+                  <a class="btn-link" style="cursor: pointer" @click="permisoAgregar(data.item.id, permiso.id)">
                     <i class="far fa-plus-square" />
                   </a>
                 </b-badge>

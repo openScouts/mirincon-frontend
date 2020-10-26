@@ -12,9 +12,7 @@
             <b-dropdown-item>------------</b-dropdown-item>
             <b-dropdown-item @click="reenvioPauta">Re Enviar Pauta Masivo</b-dropdown-item>
           </b-dropdown>
-          <nuxt-link :to="`/eventos/creacion/formulario/${uuid}`" class="btn btn-warning btn-sm">
-            Editar
-          </nuxt-link>
+          <nuxt-link :to="`/eventos/creacion/formulario/${uuid}`" class="btn btn-warning btn-sm"> Editar </nuxt-link>
         </template>
       </titulo>
     </template>
@@ -27,9 +25,7 @@
       <b-alert v-if="evento.autorizado === 'N'" show variant="warning">
         El evento no fue autorizado por el organimo superior
       </b-alert>
-      <alerta v-if="evento.borrado" tipo="error">
-        El evento esta en Estado BORRADO
-      </alerta>
+      <alerta v-if="evento.borrado" tipo="error"> El evento esta en Estado BORRADO </alerta>
 
       <!--------------------------------------------------->
       <div class="card-body">

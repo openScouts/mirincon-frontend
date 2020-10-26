@@ -8,8 +8,8 @@
       size="lg"
       title="Envio de Mail masivo a los participantes adultos"
     >
-      <div style="height: 400px;">
-        <quill-editor v-model="texto" style="height: 300px;" />
+      <div style="height: 400px">
+        <quill-editor v-model="texto" style="height: 300px" />
       </div>
       <button v-promise-btn class="btn btn-success btn-block" @click="sendMailMasivo">Enviar Mail</button>
     </b-modal>

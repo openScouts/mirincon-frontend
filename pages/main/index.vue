@@ -17,9 +17,7 @@
           <hr />
           <btn-app to="/formacion/trabajos" tipo="info" icon="fa os-accion-trabajo-list">Trabajos</btn-app>
           <btn-app to="/formacion/experiencias" tipo="info" icon="fa os-area-ams">Experiencias</btn-app>
-          <btn-app to="/eventos/administracion" tipo="info" icon="fa os-accion-evento-list">
-            Eventos
-          </btn-app>
+          <btn-app to="/eventos/administracion" tipo="info" icon="fa os-accion-evento-list"> Eventos </btn-app>
         </template>
       </b-col>
       <b-col v-if="!user.is.nacion" md="12" lg="8" class="contenedorDerecho">

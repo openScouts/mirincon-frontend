@@ -9,9 +9,7 @@
         <strong class="text-muted">Documento: </strong>
         {{ persona.documento }}
       </div>
-      <b-badge v-if="persona.afiliacion === false" variant="danger">
-        No Afiliado
-      </b-badge>
+      <b-badge v-if="persona.afiliacion === false" variant="danger"> No Afiliado </b-badge>
     </div>
   </div>
 </template>

@@ -5,12 +5,8 @@
     </template>
     <div class="row">
       <div class="col-md-6 col-12">
-        <btn-app to="/gestion/legajos/carga_masiva" icon="fa fa-upload">
-          Carga Masiva
-        </btn-app>
-        <btn-app to="/gestion/legajos" icon="fa cis-scout-perfil">
-          Listado
-        </btn-app>
+        <btn-app to="/gestion/legajos/carga_masiva" icon="fa fa-upload"> Carga Masiva </btn-app>
+        <btn-app to="/gestion/legajos" icon="fa cis-scout-perfil"> Listado </btn-app>
       </div>
       <div class="col-md-6 col-12">
         <div class="card card-accent-primary">

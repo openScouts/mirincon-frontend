@@ -90,7 +90,7 @@
 
 <style scoped>
 .VueTables >>> * tr th:nth-child(1) {
-  /* Defino el Ancho de la primer columna*/
+  /* Defino el Ancho de la primer columna */
   width: 25%;
 }
 </style>

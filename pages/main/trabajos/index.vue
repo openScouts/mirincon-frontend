@@ -4,9 +4,7 @@
       <titulo>Gestión de Trabajos Practicos</titulo>
     </template>
     <template v-if="$auth.user.is.formador">
-      <btn-app to="/main/trabajos/mistrabajos" tipo="info" icon="fa os-accion-evento">
-        Mi Trabajos
-      </btn-app>
+      <btn-app to="/main/trabajos/mistrabajos" tipo="info" icon="fa os-accion-evento"> Mi Trabajos </btn-app>
       <btn-app to="/main/trabajos/mis_trabajos_asignado" tipo="warning" icon="fa os-area-ams">
         Trabajos Asignados
       </btn-app>

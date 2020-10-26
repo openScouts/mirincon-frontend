@@ -13,5 +13,4 @@
   "workbench.editor.enablePreview": false,
   "eslint.format.enable": true,
   "prettier.trailingComma": "all",
-  "eslint.enable": false
 }

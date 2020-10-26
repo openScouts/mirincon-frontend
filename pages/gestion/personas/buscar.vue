@@ -69,7 +69,7 @@
 </template>
 
 <style scoped>
-/* Defino el Ancho de la primer columna*/
+/* Defino el Ancho de la primer columna */
 .VueTables >>> * tr th:nth-child(1) {
   width: 25%;
 }
@@ -112,7 +112,7 @@ export default {
           { value: 5, text: 'Honorario' },
           /* { value: '6', text: 'Otra' },
            { value: '7', text: 'Beneficiario' }, */
-          { value: 160, text: 'Acompañante' },
+          { value: 8, text: 'Acompañante' },
         ],
       },
       ver_tabla: false,

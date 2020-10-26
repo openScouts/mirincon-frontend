@@ -29,15 +29,9 @@
             </b-form-group>
             <b-form-group label="Evento disponible: ">
               <b-form-select v-model="evento.participa" size="sm">
-                <option v-if="!user.is.grupo" value="Z">
-                  Toda la Zona
-                </option>
-                <option v-if="user.is.grupo || user.is.distrito" value="D">
-                  Todo el Distrito
-                </option>
-                <option value="P">
-                  Solo mi Organismo
-                </option>
+                <option v-if="!user.is.grupo" value="Z">Toda la Zona</option>
+                <option v-if="user.is.grupo || user.is.distrito" value="D">Todo el Distrito</option>
+                <option value="P">Solo mi Organismo</option>
               </b-form-select>
               <error input="participa" />
             </b-form-group>
@@ -220,62 +214,38 @@
                 class="form-control ramas"
                 multiple="multiple"
                 size="6"
-                style="font-family: caseroft-iconos-scout, sans-serif;"
+                style="font-family: caseroft-iconos-scout, sans-serif"
               >
-                <option value="T,L,S,C,R" selected="selected">
-                  Totas las Ramas
-                </option>
-                <option value="T">
-                   Castores
-                </option>
-                <option value="L">
-                   Lobatos y Lobeznas
-                </option>
-                <option value="S">
-                   Scouts
-                </option>
-                <option value="C">
-                   Caminates
-                </option>
-                <option value="R">
-                   Rovers
-                </option>
+                <option value="T,L,S,C,R" selected="selected">Totas las Ramas</option>
+                <option value="T"> Castores</option>
+                <option value="L"> Lobatos y Lobeznas</option>
+                <option value="S"> Scouts</option>
+                <option value="C"> Caminates</option>
+                <option value="R"> Rovers</option>
               </select>
               <error input="rama" />
             </b-form-group>
           </b-col>
 
           <b-col md="12">
-            <button v-if="!evento.id" v-promise-btn class="btn btn-primary" @click="submitCrear">
-              Crear Evento
-            </button>
-            <button v-else v-promise-btn class="btn btn-primary" @click="submitActualizar">
-              Actualizar Evento
-            </button>
+            <button v-if="!evento.id" v-promise-btn class="btn btn-primary" @click="submitCrear">Crear Evento</button>
+            <button v-else v-promise-btn class="btn btn-primary" @click="submitActualizar">Actualizar Evento</button>
           </b-col>
         </b-row>
       </b-card>
 
       <b-card class="card-border-color card-border-color-success">
         <b-row>
-          <b-col md="12" style="height: 400px;">
+          <b-col md="12" style="height: 400px">
             <error input="descripcion" />
-            <quill-editor v-model="evento.descripcion" style="height: 300px;" />
+            <quill-editor v-model="evento.descripcion" style="height: 300px" />
             <b-form-input v-show="false" v-model="evento.eventos_area_id" size="sm" type="text" />
             <b-form-input v-show="false" v-model="evento.id" size="sm" type="text" />
             <b-form-input v-show="false" v-model="evento.uuid" size="sm" type="text" />
           </b-col>
         </b-row>
       </b-card>
-      <b-modal
-        ref="nuevoLugar"
-        size="lg"
-        scrollable
-        hide-footer
-        title="Nuevo Lugar"
-        centered
-        style="z-index: 90000000;"
-      >
+      <b-modal ref="nuevoLugar" size="lg" scrollable hide-footer title="Nuevo Lugar" centered style="z-index: 90000000">
         <div class="clearfix" />
       </b-modal>
     </div>

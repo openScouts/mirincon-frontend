@@ -8,9 +8,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="card card-accent-primary">
-              <div class="card-header">
-                Cargar Nueva Habilitacion
-              </div>
+              <div class="card-header">Cargar Nueva Habilitacion</div>
               <div class="card-body">
                 <div class="form-group">
                   <label class="control-label">Documento</label>
@@ -22,12 +20,8 @@
                   <select v-model="form.ams_instancias_id" class="form-control">
                     <option v-for="(ins, index) in instancias" :key="index" :value="ins.id">
                       {{ ins.nombre }}
-                      <template v-if="ins.linea === 'PJ'">
-                        ( Programa de Jovenes )
-                      </template>
-                      <template v-else-if="ins.linea === 'DI'">
-                        ( Direccion Institucional )
-                      </template>
+                      <template v-if="ins.linea === 'PJ'"> ( Programa de Jovenes ) </template>
+                      <template v-else-if="ins.linea === 'DI'"> ( Direccion Institucional ) </template>
                     </option>
                   </select>
                   <error input="ams_instancias_id" />
@@ -36,9 +30,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <nuxt-link to="/formacion/habilitaciones" class="btn btn-block btn btn-danger">
-              Cancelar
-            </nuxt-link>
+            <nuxt-link to="/formacion/habilitaciones" class="btn btn-block btn btn-danger"> Cancelar </nuxt-link>
             <template v-if="isEdicion">
               <button v-promise-btn class="btn-block btn btn-success" @click="actualizarHabilitacion()">
                 Actualizar Solicitud
@@ -56,9 +48,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="card card-accent-primary">
-              <div class="card-header">
-                Organismo que emitio la habilitación (GRUPO)
-              </div>
+              <div class="card-header">Organismo que emitio la habilitación (GRUPO)</div>
               <div class="card-body">
                 <div class="form-group">
                   <!--
@@ -103,9 +93,7 @@
           </div>
           <div v-if="!user.is.grupo" class="col-md-6">
             <div class="card card-accent-primary">
-              <div class="card-header">
-                Organismo que confirmo habilitación (DISTRITO)
-              </div>
+              <div class="card-header">Organismo que confirmo habilitación (DISTRITO)</div>
               <!-- /.box-header -->
               <div class="card-body">
                 <div class="form-group">

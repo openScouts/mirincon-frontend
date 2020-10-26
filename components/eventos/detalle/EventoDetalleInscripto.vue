@@ -3,12 +3,8 @@
     <div class="card-body">
       <div class="tab-container">
         <b-nav class="nav-tabs" fill>
-          <b-nav-item :active="tab === 1" @click="tabs(1, 'inscriptos')">
-            Inscriptos
-          </b-nav-item>
-          <b-nav-item :active="tab === 2" @click="tabs(2, 'bajas')">
-            Bajas
-          </b-nav-item>
+          <b-nav-item :active="tab === 1" @click="tabs(1, 'inscriptos')"> Inscriptos </b-nav-item>
+          <b-nav-item :active="tab === 2" @click="tabs(2, 'bajas')"> Bajas </b-nav-item>
         </b-nav>
       </div>
       <v-server-table ref="tabla" :columns="columns" :options="options" url="/eventos/inscriptos">
@@ -90,7 +86,7 @@
 </template>
 
 <style scoped>
-/* Defino el Ancho de la primer columna*/
+/* Defino el Ancho de la primer columna */
 .VueTables >>> * tr th:nth-child(1) {
   width: 30%;
 }

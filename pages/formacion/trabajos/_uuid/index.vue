@@ -19,7 +19,7 @@
     <div v-if="contador.length !== 0" class="row">
       <div class="col-md-6 col-sm-4 col-xl-2">
         <!-- START card-->
-        <div class="card-counter" style="cursor: pointer;" title="Ver Todos" @click="getPorEstado(0)">
+        <div class="card-counter" style="cursor: pointer" title="Ver Todos" @click="getPorEstado(0)">
           <i class="fas fa-database"></i>
           <span class="count-numbers">{{ total }}</span>
           <span class="count-name">Total</span>
@@ -33,7 +33,7 @@
           <div
             :class="`card-counter text-white bg-${estado.color}`"
             :title="'Filtrar por ' + estado.estado"
-            style="cursor: pointer;"
+            style="cursor: pointer"
             @click="getPorEstado(estado.id)"
           >
             <i :class="`fas ${estado.icono}`"></i>

@@ -21,9 +21,9 @@
         </b-button>-->
         <hr />
         <label>Redactar Devolucion</label>
-        <div style="height: 400px;">
+        <div style="height: 400px">
           <error input="mensaje" />
-          <quill-editor v-model="form.mensaje" style="height: 350px;" />
+          <quill-editor v-model="form.mensaje" style="height: 350px" />
         </div>
         <hr />
         <button v-promise-btn type="button" class="btn btn-success" @click="sendDevolucion">Cargar devolucion</button>

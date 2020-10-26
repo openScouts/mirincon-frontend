@@ -58,16 +58,10 @@
           <div class="message">
             <div class="py-3 pb-5 mr-3 float-left"></div>
             <div>
-              <small class="text-muted">
-                Lukasz Holeczek
-              </small>
-              <small class="text-muted float-right mt-1">
-                1:52 PM
-              </small>
+              <small class="text-muted"> Lukasz Holeczek </small>
+              <small class="text-muted float-right mt-1"> 1:52 PM </small>
             </div>
-            <div class="text-truncate font-weight-bold">
-              Lorem ipsum dolor sit amet
-            </div>
+            <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
             <small class="text-muted">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
             </small>
@@ -92,16 +86,10 @@
               <div class="avatar"></div>
             </div>
             <div>
-              <small class="text-muted">
-                Lukasz Holeczek
-              </small>
-              <small class="text-muted float-right mt-1">
-                1:52 PM
-              </small>
+              <small class="text-muted"> Lukasz Holeczek </small>
+              <small class="text-muted float-right mt-1"> 1:52 PM </small>
             </div>
-            <div class="text-truncate font-weight-bold">
-              Lorem ipsum dolor sit amet
-            </div>
+            <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
             <small class="text-muted">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
             </small>
@@ -112,16 +100,10 @@
               <div class="avatar"></div>
             </div>
             <div>
-              <small class="text-muted">
-                Lukasz Holeczek
-              </small>
-              <small class="text-muted float-right mt-1">
-                1:52 PM
-              </small>
+              <small class="text-muted"> Lukasz Holeczek </small>
+              <small class="text-muted float-right mt-1"> 1:52 PM </small>
             </div>
-            <div class="text-truncate font-weight-bold">
-              Lorem ipsum dolor sit amet
-            </div>
+            <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
             <small class="text-muted">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
             </small>
@@ -130,16 +112,10 @@
           <div class="message">
             <div class="py-3 pb-5 mr-3 float-left"></div>
             <div>
-              <small class="text-muted">
-                Lukasz Holeczek
-              </small>
-              <small class="text-muted float-right mt-1">
-                1:52 PM
-              </small>
+              <small class="text-muted"> Lukasz Holeczek </small>
+              <small class="text-muted float-right mt-1"> 1:52 PM </small>
             </div>
-            <div class="text-truncate font-weight-bold">
-              Lorem ipsum dolor sit amet
-            </div>
+            <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
             <small class="text-muted">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
             </small>
@@ -212,9 +188,7 @@
             <small><b>CPU Usage</b></small>
           </div>
           <b-progress :value="25" height="{}" class="progress-xs" variant="info" />
-          <small class="text-muted">
-            348 Processes. 1/4 Cores.
-          </small>
+          <small class="text-muted"> 348 Processes. 1/4 Cores. </small>
           <div class="text-uppercase mb-1 mt-2">
             <small><b>Memory Usage</b></small>
           </div>

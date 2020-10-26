@@ -38,9 +38,7 @@
                 <template v-if="datos.experiencias.length < 9999">
                   <b-form-select v-model="evento.ams_experiencias_id" size="sm">
                     <template v-for="tipo in datos.experiencias">
-                      <option :key="tipo.id" :value="tipo.id">
-                        (Esquema {{ tipo.esquema }}) - {{ tipo.nombre }}
-                      </option>
+                      <option :key="tipo.id" :value="tipo.id">(Esquema {{ tipo.esquema }}) - {{ tipo.nombre }}</option>
                     </template>
                   </b-form-select>
                 </template>
@@ -85,15 +83,9 @@
             </b-form-group>
             <b-form-group label="Evento disponible: ">
               <b-form-select v-model="evento.participa" size="sm">
-                <option v-if="!user.is.grupo" value="Z">
-                  Toda mi la Zona
-                </option>
-                <option v-if="user.is.grupo || user.is.distrito" value="D">
-                  Todo el Distrito
-                </option>
-                <option value="P">
-                  Solo mi Organismo (Privado)
-                </option>
+                <option v-if="!user.is.grupo" value="Z">Toda mi la Zona</option>
+                <option v-if="user.is.grupo || user.is.distrito" value="D">Todo el Distrito</option>
+                <option value="P">Solo mi Organismo (Privado)</option>
                 <!--
                 <option v-if="user.is.zona" value="R">Toda mi la Region</option>
                 -->
@@ -257,26 +249,14 @@
                 class="form-control ramas"
                 multiple="multiple"
                 size="6"
-                style="font-family: caseroft-iconos-scout, sans-serif;"
+                style="font-family: caseroft-iconos-scout, sans-serif"
               >
-                <option value="0" selected="selected">
-                  Sin Benerificarios
-                </option>
-                <option value="T">
-                   Castores
-                </option>
-                <option value="L">
-                   Lobatos y Lobeznas
-                </option>
-                <option value="S">
-                   Scouts
-                </option>
-                <option value="C">
-                   Caminates
-                </option>
-                <option value="R">
-                   Rovers
-                </option>
+                <option value="0" selected="selected">Sin Benerificarios</option>
+                <option value="T"> Castores</option>
+                <option value="L"> Lobatos y Lobeznas</option>
+                <option value="S"> Scouts</option>
+                <option value="C"> Caminates</option>
+                <option value="R"> Rovers</option>
               </select>
               <error input="rama" />
             </b-form-group>
@@ -285,59 +265,39 @@
               label="Genera Certificado:"
             >
               <b-form-select v-model="evento.genera_certificado" size="sm">
-                <option value="S">
-                  Genera Certificado
-                </option>
-                <option value="N">
-                  No genera Certificado
-                </option>
+                <option value="S">Genera Certificado</option>
+                <option value="N">No genera Certificado</option>
               </b-form-select>
               <error input="genera_certificado" />
             </b-form-group>
             <b-form-group v-if="datos.area.codigo !== 'AMS' && evento.eventos_tipo_id !== 12" label="Revalida IM:">
               <b-form-select v-model="evento.crea_ams" size="sm">
-                <option value="S">
-                  Revalidar IM
-                </option>
-                <option value="N">
-                  No Revalida IM
-                </option>
+                <option value="S">Revalidar IM</option>
+                <option value="N">No Revalida IM</option>
               </b-form-select>
               <error input="crea_ams" />
             </b-form-group>
           </b-col>
 
           <b-col md="12">
-            <button v-if="!evento.id" v-promise-btn class="btn btn-primary" @click="submitCrear">
-              Crear Evento
-            </button>
-            <button v-else v-promise-btn class="btn btn-primary" @click="submitActualizar">
-              Actualizar Evento
-            </button>
+            <button v-if="!evento.id" v-promise-btn class="btn btn-primary" @click="submitCrear">Crear Evento</button>
+            <button v-else v-promise-btn class="btn btn-primary" @click="submitActualizar">Actualizar Evento</button>
           </b-col>
         </b-row>
       </b-card>
 
       <b-card class="card-border-color card-border-color-success">
         <b-row>
-          <b-col md="12" style="height: 400px;">
+          <b-col md="12" style="height: 400px">
             <error input="descripcion" />
-            <quill-editor v-model="evento.descripcion" style="height: 300px;" />
+            <quill-editor v-model="evento.descripcion" style="height: 300px" />
             <b-form-input v-show="false" v-model="evento.eventos_area_id" size="sm" type="text" />
             <b-form-input v-show="false" v-model="evento.id" size="sm" type="text" />
             <b-form-input v-show="false" v-model="evento.uuid" size="sm" type="text" />
           </b-col>
         </b-row>
       </b-card>
-      <b-modal
-        ref="nuevoLugar"
-        size="lg"
-        scrollable
-        hide-footer
-        title="Nuevo Lugar"
-        centered
-        style="z-index: 90000000;"
-      >
+      <b-modal ref="nuevoLugar" size="lg" scrollable hide-footer title="Nuevo Lugar" centered style="z-index: 90000000">
         <div class="clearfix" />
       </b-modal>
     </div>

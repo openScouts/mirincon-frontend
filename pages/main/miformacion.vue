@@ -8,7 +8,7 @@
       <div slot="header"><span class="fas cis-im" /> Datos de Insignia de Madera</div>
       <insignia-madera :uuid="personaUUID" />
     </b-card>
-    <b-card id="detalleHabilitacion" no-body class="card-accent-primary">
+    <b-card v-show="verHabilitaciones" id="detalleHabilitacion" no-body class="card-accent-primary">
       <!-- v-show="gridHabilitacion.items.length"  -->
       <div slot="header"><span class="fas cis-im" /> Mis Habilitaciones</div>
       <habilitaciones :uuid="personaUUID" />
@@ -31,6 +31,11 @@ export default {
   props: {
     // Esto lo uso porque el componente lo llamo desde otros componentes
     uuid: { type: String, default: 'uuid' },
+  },
+  data() {
+    return {
+      verHabilitaciones: false, // este propiedad se modifica internamente desde el componente Habilitaciones
+    }
   },
   computed: {
     personaUUID() {

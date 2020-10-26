@@ -22,8 +22,8 @@
             <div :class="{ active: tab === 2 }" class="tab-pane" role="tabpanel">
               <hr />
               <label>Redactar trabajo</label>
-              <div style="height: 350px;">
-                <quill-editor v-model="redactado" style="height: 300px;" />
+              <div style="height: 350px">
+                <quill-editor v-model="redactado" style="height: 300px" />
               </div>
               <hr />
               <button v-promise-btn class="btn btn-success" @click="enviarRedactado">Enviar Trabajo Redactado</button>

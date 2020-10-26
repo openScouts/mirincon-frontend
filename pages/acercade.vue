@@ -3,7 +3,6 @@
     <template slot="titulo">
       <titulo>Mi Rincon Scout</titulo>
     </template>
-
     <div class="row">
       <div class="col-md-6">
         <h4>Miembros Involucrados en el proyecto</h4>

@@ -30,7 +30,9 @@ export default {
 .centrado {
   width: 100%;
   color: #e0e0e0;
-  /*IMPORTANTE*/
+
+  /* IMPORTANTE */
+
   display: flex;
   justify-content: center;
   align-items: center;

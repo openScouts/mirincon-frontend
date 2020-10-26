@@ -129,7 +129,7 @@
 .VueTables >>> * tr th:nth-child(1) {
   width: 30% !important;
 }
-.VueTables >>> * tr th:nth-child(1) {
+.VueTables >>> * tr th:nth-child(2) {
   width: 30% !important;
 }
 .VueTables >>> * tr th:nth-child(3) {

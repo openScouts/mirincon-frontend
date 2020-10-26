@@ -35,9 +35,7 @@
           <nuxt-link :to="'/formacion/trabajos/' + props.row.uuid">Ver</nuxt-link>
         </template>
         <template slot="rel_trabajos_estado.nombre" slot-scope="props">
-          <span v-if="props.row.rel_trabajos_estado.nombre === 'Abierto'" class="badge badge-success">
-            Abierto
-          </span>
+          <span v-if="props.row.rel_trabajos_estado.nombre === 'Abierto'" class="badge badge-success"> Abierto </span>
           <span v-else class="badge badge-info">{{ props.row.rel_trabajos_estado.nombre }}</span>
         </template>
       </v-server-table>
@@ -46,7 +44,7 @@
 </template>
 
 <style scoped>
-/* Defino el Ancho de la primer columna*/
+/* Defino el Ancho de la primer columna */
 .VueTables >>> * tr th:nth-child(1) {
   width: 30%;
 }

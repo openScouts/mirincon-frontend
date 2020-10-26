@@ -10,8 +10,8 @@
     <div class="card card-accent-primary">
       <div class="card-body">
         <label>Redactar Mensaje</label>
-        <div style="height: 200px;">
-          <quill-editor v-model="mensaje" style="height: 150px;"></quill-editor>
+        <div style="height: 200px">
+          <quill-editor v-model="mensaje" style="height: 150px"></quill-editor>
         </div>
         <hr />
         <button v-promise-btn class="btn btn-success" @click="enviarMensaje">Enviar Mensaje</button>

@@ -1,7 +1,11 @@
 'use strict'
 
 module.exports = {
-  mode: 'spa',
+  // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
+  ssr: false,
+
+  // Target (https://go.nuxtjs.dev/config-target)
+  target: 'static',
   /* Encabezados de la página. */
   head: {
     title: 'Mi Rincon Scout',
@@ -11,7 +15,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'Sistema de Gestion Scout - OpenScouts',
+        content: 'Mi Rincon Scouts - OpenScouts',
       },
     ],
     link: [
@@ -31,7 +35,8 @@ module.exports = {
       },
     ],
   },
-
+  // Auto import components (https://go.nuxtjs.dev/config-components)
+  components: false,
   /* Personaliza el color de la barra de progreso. */
   loading: '~/components/loading.vue',
   loadingIndicator: {
@@ -56,10 +61,10 @@ module.exports = {
   ],
 
   buildModules: [
-    '@nuxt/typescript-build',
-    // Doc: https://github.com/nuxt-community/stylelint-module
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    // '@nuxtjs/laravel-echo',
   ],
   echo: {
     broadcaster: 'pusher',
@@ -75,6 +80,8 @@ module.exports = {
     ['@nuxtjs/pwa', { icon: true }], //, { icon: false }
     '@nuxtjs/dotenv',
     'nuxt-leaflet',
+    // https://go.nuxtjs.dev/content
+    '@nuxt/content',
   ],
   bootstrapVue: {
     bootstrapCSS: false, // Or `css: false`
@@ -90,29 +97,22 @@ module.exports = {
     orientation: 'portrait',
     theme_color: '#FFFFFF',
   },
+
   auth: {
-    resetOnError: true, // Si está habilitado, el usuario redireccionará a la ruta protegida original en lugar de redirect.home.
-    rewriteRedirects: true,
-    redirect: {
-      login: '/login',
-      logout: '/',
-      callback: '/main',
-      home: '/main',
-    },
     strategies: {
       local: {
         endpoints: {
           login: {
-            url: '/login',
+            url: '/auth/login',
             method: 'post',
-            propertyName: 'token',
+            propertyName: 'access_token',
           },
-          logout: false,
+          logout: {
+            url: '/auth/logout',
+            method: 'post',
+          },
           user: { url: '/user', method: 'get', propertyName: 'data' },
         },
-        tokenRequired: true,
-        token_type: 'Bearer',
-        response_type: 'token',
       },
     },
   },
@@ -131,15 +131,13 @@ module.exports = {
   router: {
     linkActiveClass: 'active',
     mode: 'history',
-    extendRoutes() {},
+    middleware: ['auth'],
   },
   /*
    ** Build configuration
    */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend() {},
+  build: {},
+  generate: {
+    fallback: true,
   },
 }

@@ -52,6 +52,9 @@ export default {
     getHabilitacion() {
       this.$axios.get('/formacion/habilitaciones/' + this.personaUUID).then((response) => {
         this.grid.items = response.data.data
+        if (this.grid.items.length) {
+          this.$parent.verHabilitaciones = true
+        }
       })
     },
   },

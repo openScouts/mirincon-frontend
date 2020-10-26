@@ -38,10 +38,6 @@ const extend = {
       devtools: false,
     },
   },
-  sentry: {
-    dsn: 'https://ecb1b14f5be040f293eba666d766e020@sentry.io/1453777', // Enter your project's DSN here
-    config: {}, // Additional config
-  },
 }
 
 module.exports = merge(nuxt, extend)

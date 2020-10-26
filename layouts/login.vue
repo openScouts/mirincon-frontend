@@ -15,7 +15,7 @@
       <div class="text-center">
         <br />
         <a href="https://play.google.com/store/apps/details?id=ar.com.openscouts.mirincon.twa">
-          <img src="/img/google-play.png" style="height: 50px;" />
+          <img src="/img/google-play.png" style="height: 50px" />
           <br />
         </a>
         <br />
@@ -38,7 +38,7 @@
 }
 
 .main {
-  padding: 0px 10px;
+  padding: 0 10px;
 }
 
 @media screen and (max-height: 450px) {
@@ -87,7 +87,7 @@ import VueParticles from 'vue-particles'
 Vue.use(VueParticles)
 
 export default {
-  middleware: ['guest'],
+  auth: 'guest',
   mounted() {
     this.classBody()
   },

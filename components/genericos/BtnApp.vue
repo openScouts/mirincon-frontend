@@ -5,9 +5,6 @@
   </nuxt-link>
 </template>
 <style ang="sass" scoped>
-.btn-app:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
 .btn-app {
   display: block;
   width: 100%;
@@ -16,7 +13,9 @@
   text-align: center;
   border-radius: 2px;
 }
-
+.btn-app:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
 @media (min-width: 960px) {
   .btn-app {
     display: inline-block;

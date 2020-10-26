@@ -49,7 +49,7 @@
       </b-col>
       <b-col col sm="12" md="12" lg="10" class="pr-1">
         <div class="card card-accent-primary">
-          <table style="width: 100%;" class="table table-striped table-sm">
+          <table style="width: 100%" class="table table-striped table-sm">
             <tr>
               <th>Nombre</th>
               <th>Libro</th>
@@ -58,7 +58,7 @@
             </tr>
             <template v-for="datos in data">
               <tr :key="datos.id" :class="color(datos.estado_id)">
-                <td style="vertical-align: middle;">
+                <td style="vertical-align: middle">
                   <div-persona :persona="datos.persona" />
                 </td>
                 <!--
@@ -66,16 +66,16 @@
                   <div-funciones :funciones="datos.persona.funciones" />
                 </td>
                 -->
-                <td style="vertical-align: middle;">
+                <td style="vertical-align: middle">
                   <input v-model="datos.libro" class="form-control form-control-sm" required="required" type="number" />
                 </td>
-                <td style="vertical-align: middle;">
+                <td style="vertical-align: middle">
                   <input v-model="datos.folio" class="form-control form-control-sm" required="required" type="number" />
                 </td>
-                <td v-if="curso.solicita_rama" style="vertical-align: middle;">
+                <td v-if="curso.solicita_rama" style="vertical-align: middle">
                   <select-ramas v-model="datos.rama" :value="datos.rama" clase="form-control-sm" />
                 </td>
-                <td style="vertical-align: middle;">
+                <td style="vertical-align: middle">
                   <select v-if="datos.estado_id != 3" v-model="datos.estado_id" class="form-control form-control-sm">
                     <option value="1">En Curso</option>
                     <option value="2">Acreditado</option>

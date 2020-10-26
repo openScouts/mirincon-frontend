@@ -43,9 +43,7 @@
     <button v-if="paso === 1" v-promise-btn class="btn btn-success btn-block" @click="validaDni">
       Validar Documento
     </button>
-    <button v-if="paso === 2" v-promise-btn class="btn btn-success btn-block" @click="login">
-      Ingresar
-    </button>
+    <button v-if="paso === 2" v-promise-btn class="btn btn-success btn-block" @click="login">Ingresar</button>
     <button v-if="paso === 2" v-promise-btn class="btn btn-warning btn-block text-white" @click="recuperClave">
       Recuperar Clave
     </button>
@@ -72,9 +70,7 @@ export default {
       paso: 1,
     }
   },
-  mounted() {
-    this.$auth.logout()
-  },
+  mounted() {},
   methods: {
     validaDni() {
       this.paso = 1
@@ -109,7 +105,7 @@ export default {
         this.$noti('Error al Hacer Login', 'danger')
         this.error = { mensaje: 'Error al Hacer Login' }
       })
-      this.$router.replace('/main/')
+      //  this.$router.replace('/main/')
     },
   },
 }

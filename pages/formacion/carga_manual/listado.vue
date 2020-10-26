@@ -51,7 +51,6 @@
             <dd v-if="props.row.libro_folio">Libro y Folio: {{ props.row.libro_folio }}</dd>
           </dl>
         </template>
-
         <template slot="opciones" slot-scope="props">
           <btn-persona-ver :uuid="props.row.persona.uuid" />
         </template>
@@ -62,11 +61,11 @@
 
 <style>
 .VueTables >>> * tr th:nth-child(1) {
-  /* Defino el Ancho de la primer columna*/
+  /* Defino el Ancho de la primer columna */
   width: 30%;
 }
 .VueTables >>> * tr th:nth-child(2) {
-  /* Defino el Ancho de la primer columna*/
+  /* Defino el Ancho de la primer columna */
   width: 25%;
 }
 </style>

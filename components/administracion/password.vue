@@ -24,9 +24,7 @@
       <textarea v-model="form.motivo" class="form-control input-sm" required />
       <error input="motivo" />
     </div>
-    <button v-promise-btn class="btn-block btn btn-success" @click="submitCambiarClave">
-      Cambiar Contraseña
-    </button>
+    <button v-promise-btn class="btn-block btn btn-success" @click="submitCambiarClave">Cambiar Contraseña</button>
   </b-modal>
 </template>
 

@@ -5,9 +5,7 @@
     </template>
     <div class="row">
       <div class="col-md-6 col-12">
-        <btn-app to="/gestion/funciones/formulario" icon="fa cis-scout-perfil">
-          Nueva Funcion
-        </btn-app>
+        <btn-app to="/gestion/funciones/formulario" icon="fa cis-scout-perfil"> Nueva Funcion </btn-app>
       </div>
     </div>
     <div class="card card-accent-primary">
@@ -29,7 +27,7 @@
                 >{{ funcion.funcion }}
                 <a
                   class="btn-link text-danger"
-                  style="cursor: pointer;"
+                  style="cursor: pointer"
                   title="Eliminar Funcion del Organismo"
                   @click="borrarFuncion(funcion.uuid)"
                 >

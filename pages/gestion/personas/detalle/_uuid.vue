@@ -172,7 +172,7 @@
                     <div class="card-header"><span class="fas os-accion-im" /> Datos de Insignia de Madera</div>
                     <insignia-madera :uuid="uuid" />
                   </div>
-                  <div id="detalleHabilitacion" class="card card-accent-primary">
+                  <div v-show="verHabilitaciones" id="detalleHabilitacion" class="card card-accent-primary">
                     <!-- v-show="gridHabilitacion.items.length"  -->
                     <div class="card-header">
                       <span class="fas os-accion-im" /> Mis Habilitaciones
@@ -215,6 +215,7 @@ export default {
       persona: {},
       datos: {},
       persona_full: {},
+      verHabilitaciones: false, // este propiedad se modifica internamente desde el componente Habilitaciones
     }
   },
   computed: {

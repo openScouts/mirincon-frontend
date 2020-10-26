@@ -34,7 +34,7 @@
   </ContentWrapper>
 </template>
 <style scoped>
-/* Defino el Ancho de la primer columna*/
+/* Defino el Ancho de la primer columna */
 .VueTables >>> * tr th:nth-child(1) {
   width: 25%;
 }

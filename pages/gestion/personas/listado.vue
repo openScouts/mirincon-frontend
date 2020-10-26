@@ -7,18 +7,10 @@
       <div class="card card-body">
         <div class="tab-container">
           <b-nav class="nav-tabs" fill>
-            <b-nav-item :active="tab === 1" @click="tabs(1, 'A', 'S')">
-              Adultos
-            </b-nav-item>
-            <b-nav-item :active="tab === 2" @click="tabs(2, 'B', 'S')">
-              Beneficiaros
-            </b-nav-item>
-            <b-nav-item :active="tab === 3" @click="tabs(3, 'A', 'N')">
-              Ex Miembros Adultos
-            </b-nav-item>
-            <b-nav-item :active="tab === 4" @click="tabs(4, 'B', 'N')">
-              Ex Miembros Beneficiarios
-            </b-nav-item>
+            <b-nav-item :active="tab === 1" @click="tabs(1, 'A', 'S')"> Adultos </b-nav-item>
+            <b-nav-item :active="tab === 2" @click="tabs(2, 'B', 'S')"> Beneficiaros </b-nav-item>
+            <b-nav-item :active="tab === 3" @click="tabs(3, 'A', 'N')"> Ex Miembros Adultos </b-nav-item>
+            <b-nav-item :active="tab === 4" @click="tabs(4, 'B', 'N')"> Ex Miembros Beneficiarios </b-nav-item>
           </b-nav>
         </div>
         <div class="card-body">
@@ -45,7 +37,7 @@
   </ContentWrapper>
 </template>
 <style scoped>
-/* Defino el Ancho de la primer columna*/
+/* Defino el Ancho de la primer columna */
 .VueTables >>> * tr th:nth-child(1) {
   width: 35%;
 }

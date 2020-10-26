@@ -1,9 +1,7 @@
 <template>
   <ContentWrapper>
     <template slot="titulo">
-      <titulo>
-        Detalle de Trabajos
-      </titulo>
+      <titulo> Detalle de Trabajos </titulo>
     </template>
     <template v-if="trabajo.estado">
       <template v-if="trabajo.estado === 'Aprobado'">

@@ -3,9 +3,7 @@
     <template slot="titulo">
       <titulo>Habilitaciones</titulo>
     </template>
-    <btn-app to="/formacion/habilitaciones/formulario" icon="fa os-accion-habilitacion-add">
-      Cargar
-    </btn-app>
+    <btn-app to="/formacion/habilitaciones/formulario" icon="fa os-accion-habilitacion-add"> Cargar </btn-app>
     <btn-app to="/formacion/habilitaciones/listado" icon="fa os-accion-habilitacion-list">Listado</btn-app>
     <hr />
     <b-row>

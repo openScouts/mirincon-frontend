@@ -1,8 +1,6 @@
 <template>
   <div class="card card-accent-primary">
-    <div class="card-header">
-      Listado de mis Trabajos
-    </div>
+    <div class="card-header">Listado de mis Trabajos</div>
     <template v-if="grid.items.length === 0">
       <vacio texto="No se encontraron trabajos a mostrar"></vacio>
     </template>

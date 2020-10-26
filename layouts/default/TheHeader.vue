@@ -5,14 +5,10 @@
     <CHeaderBrand class="mx-auto d-lg-none" src="/img/logo.svg" width="190" height="46" alt="CoreUI Logo" />
     <CHeaderNav class="d-md-down-none mr-auto">
       <CHeaderNavItem class="px-3">
-        <CHeaderNavLink to="/main">
-          Dashboard
-        </CHeaderNavLink>
+        <CHeaderNavLink to="/main"> Dashboard </CHeaderNavLink>
       </CHeaderNavItem>
       <CHeaderNavItem class="px-3">
-        <CHeaderNavLink to="/main/perfil" exact>
-          Mi Perfil
-        </CHeaderNavLink>
+        <CHeaderNavLink to="/main/perfil" exact> Mi Perfil </CHeaderNavLink>
       </CHeaderNavItem>
     </CHeaderNav>
     <CHeaderNav class="mr-2">

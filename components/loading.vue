@@ -45,11 +45,11 @@ export default {
   font-family: sans-serif;
   z-index: 99999;
 }
-/** REMPLAZAR DESDE ACA */
+
+/* REMPLAZAR DESDE ACA */
 
 .sk-chase {
   margin: 80px auto;
-
   width: 40px;
   height: 40px;
   position: relative;
@@ -65,7 +65,7 @@ export default {
   animation: sk-chase-dot 2s infinite ease-in-out both;
 }
 
-.sk-chase-dot:before {
+.sk-chase-dot::before {
   content: '';
   display: block;
   width: 25%;
@@ -93,22 +93,22 @@ export default {
 .sk-chase-dot:nth-child(6) {
   animation-delay: -0.6s;
 }
-.sk-chase-dot:nth-child(1):before {
+.sk-chase-dot:nth-child(1)::before {
   animation-delay: -1.1s;
 }
-.sk-chase-dot:nth-child(2):before {
+.sk-chase-dot:nth-child(2)::before {
   animation-delay: -1s;
 }
-.sk-chase-dot:nth-child(3):before {
+.sk-chase-dot:nth-child(3)::before {
   animation-delay: -0.9s;
 }
-.sk-chase-dot:nth-child(4):before {
+.sk-chase-dot:nth-child(4)::before {
   animation-delay: -0.8s;
 }
-.sk-chase-dot:nth-child(5):before {
+.sk-chase-dot:nth-child(5)::before {
   animation-delay: -0.7s;
 }
-.sk-chase-dot:nth-child(6):before {
+.sk-chase-dot:nth-child(6)::before {
   animation-delay: -0.6s;
 }
 

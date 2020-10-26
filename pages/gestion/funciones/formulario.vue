@@ -1,9 +1,7 @@
 <template>
   <ContentWrapper>
     <template slot="titulo">
-      <titulo>
-        Asignar Nueva Funcion
-      </titulo>
+      <titulo> Asignar Nueva Funcion </titulo>
     </template>
     <div class="row">
       <div class="col-md-12">

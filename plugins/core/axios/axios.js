@@ -22,8 +22,8 @@ export default function ({ $axios, redirect, app }) {
   $axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
   $axios.defaults.baseURL = process.env.API_HOST
   // $axios.defaults.baseURL = '/api/'
-  $axios.defaults.timeout = 30000 // 30 Segundos
 
+  $axios.defaults.timeout = 30000 // 30 Segundos
   $axios.interceptors.response.use(
     (response) => {
       Errors.flush() // si esta todo OK, borro los mensajes de error

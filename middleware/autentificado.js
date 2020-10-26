@@ -1,9 +1,6 @@
 import Vue from 'vue'
 
 export default function ({ store, error, route, redirect }) {
-  if (!store.state.auth.loggedIn) {
-    return redirect('/login')
-  }
   // Obtenga autorizaciones para rutas emparejadas (con rutas para hijos también)
   route.meta.map((meta) => {
     if (meta.auth && typeof meta.auth.permiso !== 'undefined') {

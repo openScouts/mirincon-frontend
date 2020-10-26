@@ -31,9 +31,7 @@
       </div>
       <div class="col-md-6 col-12">
         <div class="card card-accent-primary">
-          <div class="card-header">
-            Detalle de archivos
-          </div>
+          <div class="card-header">Detalle de archivos</div>
           <table class="table b-table table-striped table-hover table-sm b-table-stacked-md">
             <thead class="thead-inverse">
               <tr>
@@ -52,18 +50,12 @@
               >
                 <td scope="row">{{ index + 1 }}</td>
                 <td>{{ archivo.documento }}</td>
-                <td style="text-transform: capitalize;">{{ archivo.nombre }}</td>
+                <td style="text-transform: capitalize">{{ archivo.nombre }}</td>
                 <td>{{ archivo.extension }}</td>
                 <td>
-                  <template v-if="archivo.estado">
-                    Reconocido Bien
-                  </template>
-                  <template v-if="archivo.tamanio > tamanio_maximo">
-                    Archivo MUY PESADO
-                  </template>
-                  <template v-else>
-                    Tipo de archivo desconocido
-                  </template>
+                  <template v-if="archivo.estado"> Reconocido Bien </template>
+                  <template v-if="archivo.tamanio > tamanio_maximo"> Archivo MUY PESADO </template>
+                  <template v-else> Tipo de archivo desconocido </template>
                 </td>
               </tr>
             </tbody>

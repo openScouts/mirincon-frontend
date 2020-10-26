@@ -139,6 +139,12 @@ export default {
           acl: 'formacion.habilitaciones',
         }, */,
         {
+          name: 'Validaciones',
+          url: '/formacion/validacion',
+          icon: 'fas os-accion-habilitacion',
+          acl: 'formacion.validacion',
+        },
+        {
           name: 'Carga Manual',
           url: '/formacion/carga_manual',
           icon: 'fas os-camping-llano',
@@ -172,6 +178,12 @@ export default {
         {
           name: 'Permisos',
           url: '/administrador/usuarios/permisos',
+          icon: 'fas fa-user',
+          acl: 'administrador.permisos',
+        },
+        {
+          name: 'Jobs',
+          url: '/administrador/jobs',
           icon: 'fas fa-user',
           acl: 'administrador.permisos',
         },

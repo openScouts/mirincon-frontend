@@ -7,7 +7,7 @@
       <div class="col-md-6 col-sm-4 col-xl-2">
         <!-- START card-->
         <div class="card">
-          <div class="card-body text-center" style="cursor: pointer;" title="Ver Todos" @click="getPorEstado(0)">
+          <div class="card-body text-center" style="cursor: pointer" title="Ver Todos" @click="getPorEstado(0)">
             <div class="text-lg m-0">{{ total }}</div>
             <p>Total</p>
           </div>
@@ -19,7 +19,7 @@
           <div
             :class="`card-counter bg-${estado.color} ${estado.color}`"
             :title="'Filtrar por ' + estado.estado"
-            style="cursor: pointer;"
+            style="cursor: pointer"
             @click="getPorEstado(estado.id)"
           >
             <i :class="`fas ${estado.icono}`"></i>

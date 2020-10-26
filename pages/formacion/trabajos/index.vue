@@ -3,12 +3,8 @@
     <template slot="titulo">
       <titulo>Trabajos</titulo>
     </template>
-    <btn-app to="/formacion/trabajos/listado" icon="fa os-accion-trabajo-list">
-      Listado
-    </btn-app>
-    <btn-app to="/formacion/trabajos/formulario" icon="fa os-accion-trabajo-add">
-      Creacion
-    </btn-app>
+    <btn-app to="/formacion/trabajos/listado" icon="fa os-accion-trabajo-list"> Listado </btn-app>
+    <btn-app to="/formacion/trabajos/formulario" icon="fa os-accion-trabajo-add"> Creacion </btn-app>
     <hr />
     <b-row>
       <b-col md="12" lg="6">

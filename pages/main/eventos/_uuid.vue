@@ -21,15 +21,9 @@
         </template>
         <template v-else>
           <div class="p-2">
-            <button type="button" class="btn btn-primary" @click="filtrado('todos')">
-              Ver Todos
-            </button>
-            <button type="button" class="btn btn-success" @click="filtrado('si')">
-              Ver Anotador
-            </button>
-            <button type="button" class="btn btn-danger" @click="filtrado('no')">
-              Ver No Anotado
-            </button>
+            <button type="button" class="btn btn-primary" @click="filtrado('todos')">Ver Todos</button>
+            <button type="button" class="btn btn-success" @click="filtrado('si')">Ver Anotador</button>
+            <button type="button" class="btn btn-danger" @click="filtrado('no')">Ver No Anotado</button>
           </div>
           <b-table :items="dataset" :fields="columns" striped hover small responsive class="no-more-tables">
             <template v-slot:cell(persona)="data">

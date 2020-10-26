@@ -90,9 +90,7 @@
       </template>
       <hr />
       <template v-if="form.lectura === 'S'">
-        <alerta tipo="info">
-          Usted y su Jefe de Grupo recibiran un mail con la confirmacion de Participacion
-        </alerta>
+        <alerta tipo="info"> Usted y su Jefe de Grupo recibiran un mail con la confirmacion de Participacion </alerta>
         <button v-promise-btn class="btn btn-success" @click="darDeAltaInscripto()">Confirmar Participacion</button>
       </template>
     </b-modal>

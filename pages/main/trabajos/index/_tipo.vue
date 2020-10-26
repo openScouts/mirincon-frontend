@@ -7,9 +7,7 @@
       <template v-slot:cell(rel_curso.fecha)="data">{{ data.item.rel_curso.fecha | Date }}</template>
       <template v-slot:cell(f_entrega)="data">{{ data.item.f_entrega | Date }}</template>
       <template v-slot:cell(rel_trabajos_estado.nombre)="data">
-        <span v-if="data.item.rel_trabajos_estado.nombre === 'Abierto'" class="badge badge-success">
-          Abierto
-        </span>
+        <span v-if="data.item.rel_trabajos_estado.nombre === 'Abierto'" class="badge badge-success"> Abierto </span>
         <span v-else class="badge badge-info">{{ data.item.rel_trabajos_estado.nombre }}</span>
       </template>
 
@@ -83,4 +81,3 @@ export default {
   },
 }
 </script>
-<style scoped></style>

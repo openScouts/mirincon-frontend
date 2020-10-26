@@ -1,12 +1,7 @@
 <template>
-  <div class="titulo clearfix">
-    <div class="float-right pl-1">
-      <!--
-      <button class="btn btn-primary btn-sm btn-pill" @click="$router.back()">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      -->
-    </div>
+  <!-- Elimine clase titulo-->
+  <div class="my-2 clearfix">
+    <div class="float-right pl-1"></div>
     <h2 class="float-left">
       <slot />
       <small>
@@ -25,9 +20,9 @@
   background-color: white;
   padding: 10px;
   margin-bottom: 10px;
-  -webkit-box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.14);
-  -moz-box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.14);
-  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.14);
+  -webkit-box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.14);
 }
 h2 {
   font-size: 1.5rem;
