@@ -1,7 +1,5 @@
 'use strict'
 
-import fs from 'fs'
-const path = require('path')
 const merge = require('deepmerge')
 const nuxt = require('./base.config.js')
 
@@ -16,15 +14,5 @@ const extend = {
   },
 }
 const todo = merge(nuxt, extend)
-/**
- *  Cargo los certificados solo en Local
- *  aparte lo cargo de esta forma, porque si lo paso x el marge, da error
- */
-todo.server = {
-  https: {
-    key: fs.readFileSync(path.resolve(__dirname, 'localhost.key')),
-    cert: fs.readFileSync(path.resolve(__dirname, 'localhost.cert')),
-  },
-}
 
 module.exports = todo
