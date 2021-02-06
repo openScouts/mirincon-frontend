@@ -4,14 +4,14 @@
       {{ titulo }}
     </div>
     <b-table class="table-sm" :items="grid.items" :fields="grid.fields">
-      <template v-slot:cell(rel_curso.fecha)="data">{{ data.item.rel_curso.fecha | Date }}</template>
-      <template v-slot:cell(f_entrega)="data">{{ data.item.f_entrega | Date }}</template>
-      <template v-slot:cell(rel_trabajos_estado.nombre)="data">
+      <template #cell(curso_fecha)="data">{{ data.item.rel_curso.fecha | Date }}</template>
+      <template #cell(f_entrega)="data">{{ data.item.f_entrega | Date }}</template>
+      <template #cell(trabajos_estado)="data">
         <span v-if="data.item.rel_trabajos_estado.nombre === 'Abierto'" class="badge badge-success"> Abierto </span>
         <span v-else class="badge badge-info">{{ data.item.rel_trabajos_estado.nombre }}</span>
       </template>
 
-      <template v-slot:cell(opciones)="data">
+      <template #cell(opciones)="data">
         <nuxt-link :to="'/formacion/trabajos/' + data.item.uuid + '/detalle'" class="btn btn-sm btn-primary">
           <i class="fas fa-binoculars" />
           {{ textoAccion }}
@@ -30,10 +30,10 @@ export default {
         items: [],
         fields: [
           { label: 'Experiencia', key: 'rel_curso.nombre' },
-          { label: 'Fecha Experiencia', key: 'rel_curso.fecha' },
+          { label: 'Fecha Experiencia', key: 'curso_fecha' },
           { label: 'Fecha Entrega', key: 'f_entrega' },
           { label: 'cantidad', key: 'rel_participantes_count' },
-          { label: 'Estado', key: 'rel_trabajos_estado.nombre' },
+          { label: 'Estado', key: 'trabajos_estado' },
           { label: 'Opciones', key: 'opciones' },
         ],
       },

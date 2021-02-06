@@ -6,11 +6,11 @@
     </template>
     <template v-else>
       <b-table :items="grid.items" :fields="grid.fields" striped hover small responsive>
-        <template v-slot:cell(entrega)="data">{{ data.item.fecha_entrega | Date }}</template>
-        <template v-slot:cell(estado)="data">
+        <template #cell(entrega)="data">{{ data.item.fecha_entrega | Date }}</template>
+        <template #cell(estado)="data">
           <div-trabajo-participante-estado :estado="data.item.estado"></div-trabajo-participante-estado>
         </template>
-        <template v-slot:cell(opciones)="data">
+        <template #cell(opciones)="data">
           <template v-if="data.item.uuid">
             <nuxt-link
               :to="'/formacion/trabajos/' + data.item.trabajo_uuid + '/participante/' + data.item.uuid"

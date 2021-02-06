@@ -9,7 +9,7 @@
       </template>
       <template v-else>
         <b-table striped hover small responsive stacked="md" :items="dataset" :fields="columns">
-          <template v-slot:cell(evento)="data">
+          <template #cell(evento)="data">
             <b-row>
               <b-col sm="2">
                 <img :src="'/img/areas/' + data.item.area_codigo.toLowerCase() + '.svg'" width="50" height="50" />
@@ -26,12 +26,12 @@
               </b-col>
             </b-row>
           </template>
-          <template v-slot:cell(costo)="data"> ${{ data.value }} </template>
-          <template v-slot:cell(pauta)="data">
+          <template #cell(costo)="data"> ${{ data.value }} </template>
+          <template #cell(pauta)="data">
             <button class="btn btn-primary" @click="modalPauta(data.item.pauta)">Ver Pauta</button>
           </template>
-          <template v-slot:cell(fecha_evento)="data">{{ data.item.fecha_evento | DateTime }}</template>
-          <template v-slot:cell(estado)="data">
+          <template #cell(fecha_evento)="data">{{ data.item.fecha_evento | DateTime }}</template>
+          <template #cell(estado)="data">
             <template v-if="data.item.inscripto_uuid">
               <div class="text-success"><i class="fas fa-thumbs-up" /> Yo Participo</div>
             </template>
@@ -39,7 +39,7 @@
               <div class="text-danger"><i class="fas fa-thumbs-down" /> NO participo</div>
             </template>
           </template>
-          <template v-slot:cell()="data">
+          <template #cell()="data">
             <div class="text-center">
               <template v-if="data.item.beneficiarios && user.is.grupo">
                 <b-button variant="info" :to="'/main/eventos/' + data.item.uuid">Avanzado</b-button>
@@ -96,28 +96,6 @@
     </b-modal>
   </div>
 </template>
-
-<style scoped>
-.VueTables >>> * tr th:nth-child(1) {
-  width: 30%;
-}
-
-.VueTables >>> * tr th:nth-child(2) {
-  width: 5%;
-}
-
-.VueTables >>> * tr th:nth-child(3) {
-  width: 15%;
-}
-
-.VueTables >>> * tr th:nth-child(4) {
-  width: 15%;
-}
-
-.VueTables >>> * tr th:nth-child(5) {
-  width: 20%;
-}
-</style>
 
 <script>
 export default {
@@ -199,3 +177,25 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.VueTables >>> * tr th:nth-child(1) {
+  width: 30%;
+}
+
+.VueTables >>> * tr th:nth-child(2) {
+  width: 5%;
+}
+
+.VueTables >>> * tr th:nth-child(3) {
+  width: 15%;
+}
+
+.VueTables >>> * tr th:nth-child(4) {
+  width: 15%;
+}
+
+.VueTables >>> * tr th:nth-child(5) {
+  width: 20%;
+}
+</style>

@@ -22,13 +22,13 @@
 </template>
 <script>
 export default {
-  mounted() {
-    this.$router.replace('/main/trabajos/mistrabajos')
-  },
   head() {
     return {
       titleTemplate: 'Gestion de Trabajos - %s ',
     }
+  },
+  mounted() {
+    this.$router.replace('/main/trabajos/mistrabajos')
   },
 }
 </script>

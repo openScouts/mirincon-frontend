@@ -125,25 +125,6 @@
   </ContentWrapper>
 </template>
 
-<style scoped>
-.VueTables >>> * tr th:nth-child(1) {
-  width: 30% !important;
-}
-.VueTables >>> * tr th:nth-child(2) {
-  width: 30% !important;
-}
-.VueTables >>> * tr th:nth-child(3) {
-  width: 30% !important;
-}
-.VueTables >>> * tr th:nth-child(4) {
-  width: 10% !important;
-}
-
-.VueTables >>> *tr td {
-  vertical-align: middle !important;
-}
-</style>
-
 <script>
 export default {
   meta: {
@@ -243,3 +224,22 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.VueTables >>> * tr th:nth-child(1) {
+  width: 30% !important;
+}
+.VueTables >>> * tr th:nth-child(2) {
+  width: 30% !important;
+}
+.VueTables >>> * tr th:nth-child(3) {
+  width: 30% !important;
+}
+.VueTables >>> * tr th:nth-child(4) {
+  width: 10% !important;
+}
+
+.VueTables >>> *tr td {
+  vertical-align: middle !important;
+}
+</style>

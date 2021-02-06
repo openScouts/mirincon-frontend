@@ -12,7 +12,7 @@
           <div class="card-header">Experiencias Pendientes de Cierre</div>
 
           <b-table :items="grid.items" :fields="grid.fields" striped hover small responsive stacked="md">
-            <template v-slot:cell(experiencia)="data">
+            <template #cell(experiencia)="data">
               <strong> {{ data.item.experiencia }}</strong>
               <div class="text-muted">
                 <strong>Organismo: </strong>
@@ -23,12 +23,12 @@
                 {{ data.item.responsable }}
               </div>
             </template>
-            <template v-slot:cell(fecha)="data">{{ data.item.fecha | Date }}</template>
-            <template v-slot:cell(pendientes)="data">
+            <template #cell(fecha)="data">{{ data.item.fecha | Date }}</template>
+            <template #cell(pendientes)="data">
               {{ data.item.pendientes }}
             </template>
 
-            <template v-slot:cell()="data">
+            <template #cell()="data">
               <b-button
                 :to="'/formacion/experiencias/detalle/' + data.item.uuid + '?estado=3'"
                 size="sm"

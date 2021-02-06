@@ -139,6 +139,11 @@ export default {
       password: {},
     }
   },
+  head() {
+    return {
+      titleTemplate: 'Mis Datos - %s ',
+    }
+  },
   computed: {
     urlFoto() {
       return process.env.API_HOST + '/foto/' + this.$auth.user.persona.uuid
@@ -171,11 +176,6 @@ export default {
     submitGuardar() {
       return this.$axios.put('/persona/datos', this.form)
     },
-  },
-  head() {
-    return {
-      titleTemplate: 'Mis Datos - %s ',
-    }
   },
 }
 </script>

@@ -19,15 +19,15 @@ import TheFooter from './default/TheFooter'
 import Ambiente from './default/Ambiente'
 
 export default {
-  middleware: ['autentificado'],
   name: 'Full',
-  scrollToTop: true,
   components: {
     TheSidebar,
     TheHeader,
     TheFooter,
     Ambiente,
   },
+  middleware: ['autentificado'],
+  scrollToTop: true,
   mounted() {
     this.classBody()
     if (process.env.NODE_ENV === 'production') {

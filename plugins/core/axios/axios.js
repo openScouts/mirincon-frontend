@@ -3,7 +3,7 @@ import Vue from 'vue'
 import Errors from './Errores/Validacion' //
 import ErrorComponent from './Errores/ErrorComponent'
 
-Vue.component('error', ErrorComponent) // Componente de validacin de formulario
+Vue.component('Error', ErrorComponent) // Componente de validacin de formulario
 Vue.mixin({
   beforeCreate() {
     // Creo las Variables globales para poder manejar los errores en la validacion de formularios

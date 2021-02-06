@@ -112,8 +112,8 @@
 <script>
 export default {
   auth: false,
-  middleware: ['guest'],
   layout: 'login',
+  middleware: ['guest'],
   data() {
     return {
       formulario: {},

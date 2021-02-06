@@ -48,7 +48,10 @@
         <div class="card card-accent-primary">
           <div class="card-body">
             <div role="tabpanel">
-              <b-nav v-if="persona.adulto" class="nav-tabs">
+              <b-nav class="nav-tabs">
+                <!--v-if="persona.adulto"
+                    agregar a futuro, que si es beneficiario, verifique si tiene alguna experiencia para mostrar
+                 -->
                 <b-nav-item :active="tab === 'datos'" @click="tabs('datos')">Datos Personales</b-nav-item>
                 <b-nav-item :active="tab === 'formacion'" @click="tabs('formacion')">Formación</b-nav-item>
               </b-nav>

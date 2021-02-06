@@ -37,11 +37,6 @@
     </div>
   </ContentWrapper>
 </template>
-<style scoped>
-.custom-file-input:lang(en) ~ .custom-file-label::after {
-  content: 'Seleccionar Trabajo';
-}
-</style>
 
 <script>
 import { quillEditor } from 'vue-quill-editor'
@@ -88,3 +83,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: 'Seleccionar Trabajo';
+}
+</style>

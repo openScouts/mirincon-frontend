@@ -6,10 +6,10 @@
     </button>
 
     <b-table striped hover small responsive stacked="md" :items="grid.items" :fields="grid.fields">
-      <template v-slot:cell(persona)="data">
+      <template #cell(persona)="data">
         <div-persona :persona="data.value" />
       </template>
-      <template v-slot:cell(opciones)="data">
+      <template #cell(opciones)="data">
         <btn-persona-ver :uuid="data.item.persona.uuid" />
         <button
           v-promise-btn
@@ -33,11 +33,6 @@
   </div>
 </template>
 
-<style scoped>
-.VueTables >>> * tr th:nth-child(1) {
-  width: 30%;
-}
-</style>
 <script>
 export default {
   props: {
@@ -88,3 +83,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.VueTables >>> * tr th:nth-child(1) {
+  width: 30%;
+}
+</style>

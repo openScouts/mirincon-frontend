@@ -11,22 +11,20 @@
     </download-excel>
     <template v-if="grid.items.length">
       <b-table striped hover small responsive stacked="md" :items="grid.items" :fields="grid.fields">
-        <template v-slot:cell(experiencia)="data">
-          ({{ data.item.organismo_codigo }}) {{ data.item.experiencia }}
-        </template>
-        <template v-slot:cell(estado)="data">
+        <template #cell(experiencia)="data"> ({{ data.item.organismo_codigo }}) {{ data.item.experiencia }} </template>
+        <template #cell(estado)="data">
           <div-experiencia-estado :estado="data.value" />
         </template>
-        <template v-slot:cell(rama)="data">
+        <template #cell(rama)="data">
           <div-rama :rama="data.value" />
         </template>
-        <template v-slot:cell(fehaciente)="data">
+        <template #cell(fehaciente)="data">
           <template v-if="data.value === 'S'">
             <div class="text-success"><i class="fas fa-thumbs-up" /> Si</div>
           </template>
         </template>
-        <template v-slot:cell(fecha)="data">{{ data.value | Date }}</template>
-        <template v-slot:cell(opciones)="data">
+        <template #cell(fecha)="data">{{ data.value | Date }}</template>
+        <template #cell(opciones)="data">
           <template v-if="data.item.certificado">
             <download
               :url="'/formacion/participantes/certificado/' + data.item.uuid"

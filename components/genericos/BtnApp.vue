@@ -4,6 +4,27 @@
     <slot />
   </nuxt-link>
 </template>
+
+<script>
+export default {
+  props: {
+    icon: {
+      required: true,
+      type: String,
+    },
+    to: {
+      required: true,
+      type: String,
+    },
+    tipo: {
+      required: false,
+      type: String,
+      default: 'primary',
+    },
+  },
+}
+</script>
+
 <style ang="sass" scoped>
 .btn-app {
   display: block;
@@ -29,22 +50,3 @@
   }
 }
 </style>
-<script>
-export default {
-  props: {
-    icon: {
-      required: true,
-      type: String,
-    },
-    to: {
-      required: true,
-      type: String,
-    },
-    tipo: {
-      required: false,
-      type: String,
-      default: 'primary',
-    },
-  },
-}
-</script>

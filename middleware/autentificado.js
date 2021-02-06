@@ -15,5 +15,6 @@ export default function ({ store, error, route, redirect }) {
             'SE ENVIÓ UN MAIL AL ADMINISTRADOR INFORMANDO LAS ACCIONES' */,
       })
     }
+    return false
   })
 }

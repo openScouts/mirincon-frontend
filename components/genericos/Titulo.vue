@@ -15,6 +15,10 @@
   </div>
 </template>
 
+<script>
+export default {}
+</script>
+
 <style scoped>
 .titulo {
   background-color: white;
@@ -30,6 +34,3 @@ h2 {
   color: #929292;
 }
 </style>
-<script>
-export default {}
-</script>

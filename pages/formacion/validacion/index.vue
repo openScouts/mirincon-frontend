@@ -11,15 +11,15 @@
         <div id="pendientes" class="card card-accent-primary">
           <div class="card-header">validacion Pendientes</div>
           <b-table :fields="grid.fields" :items="grid.items" striped hover small responsive stacked="md">
-            <template v-slot:cell(datos)="data">
+            <template #cell(datos)="data">
               <div-persona :persona="data.item.persona" />
             </template>
-            <template v-slot:cell(habilitacion)="data">
+            <template #cell(habilitacion)="data">
               {{ data.item.habilitacion }} <br />
               <span class="text-danger">Pendiente Aval Distrito</span>
             </template>
-            <template v-slot:cell(creado)="data">{{ data.value | Date }}</template>
-            <template v-slot:cell(opciones)="data">
+            <template #cell(creado)="data">{{ data.value | Date }}</template>
+            <template #cell(opciones)="data">
               <template v-if="!user.is.grupo">
                 <b-button
                   :to="'/formacion/validacion/formulario/' + data.item.uuid"

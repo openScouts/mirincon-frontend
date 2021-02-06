@@ -45,15 +45,6 @@
   </ContentWrapper>
 </template>
 
-<style scoped>
-.VueTables >>> * tr th:nth-child(1) {
-  width: 30% !important;
-}
-
-.VueTables >>> * tr th:nth-child(5) {
-  width: 30%;
-}
-</style>
 <script>
 export default {
   meta: {
@@ -88,3 +79,13 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.VueTables >>> * tr th:nth-child(1) {
+  width: 30% !important;
+}
+
+.VueTables >>> * tr th:nth-child(5) {
+  width: 30%;
+}
+</style>

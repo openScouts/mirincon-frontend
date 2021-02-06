@@ -91,30 +91,11 @@
   </ContentWrapper>
 </template>
 
-<style scoped>
-/* Defino el Ancho de la primer columna */
-.VueTables >>> * tr th:nth-child(1) {
-  width: 35%;
-}
-
-.VueTables >>> * tr th:nth-child(2) {
-  width: 35%;
-}
-
-.VueTables >>> * tr th:nth-child(3) {
-  width: 20%;
-}
-
-.VueTables >>> * tr th:nth-child(4) {
-  width: 10%;
-}
-</style>
-
 <script>
 import Vue from 'vue'
 import modalEditar from '@/components/formacion/experiencia/modalEditarEstadoCursante'
 
-Vue.component('modal-editar', modalEditar)
+Vue.component('ModalEditar', modalEditar)
 export default {
   meta: {
     auth: {
@@ -181,3 +162,22 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+/* Defino el Ancho de la primer columna */
+.VueTables >>> * tr th:nth-child(1) {
+  width: 35%;
+}
+
+.VueTables >>> * tr th:nth-child(2) {
+  width: 35%;
+}
+
+.VueTables >>> * tr th:nth-child(3) {
+  width: 20%;
+}
+
+.VueTables >>> * tr th:nth-child(4) {
+  width: 10%;
+}
+</style>

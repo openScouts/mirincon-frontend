@@ -14,10 +14,10 @@
           responsive
           class="table-sm no-more-tables"
         >
-          <template v-slot:cell(name)="data">
+          <template #cell(name)="data">
             {{ data.value }}
           </template>
-          <template v-slot:cell(permisos)="data">
+          <template #cell(permisos)="data">
             <template v-for="permiso in permisos">
               <template v-if="validaPermiso(permiso.nombre, data.item.rel_permisos)">
                 <b-badge :key="permiso.id" pill variant="success" class="m-1">

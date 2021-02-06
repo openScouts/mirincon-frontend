@@ -68,20 +68,6 @@
   </ContentWrapper>
 </template>
 
-<style scoped>
-/* Defino el Ancho de la primer columna */
-.VueTables >>> * tr th:nth-child(1) {
-  width: 25%;
-}
-
-.VueTables >>> * tr th:nth-child(3) {
-  width: 20%;
-}
-
-.VueTables >>> * tr th:nth-child(5) {
-  width: 10%;
-}
-</style>
 <script>
 export default {
   meta: {
@@ -153,3 +139,18 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+/* Defino el Ancho de la primer columna */
+.VueTables >>> * tr th:nth-child(1) {
+  width: 25%;
+}
+
+.VueTables >>> * tr th:nth-child(3) {
+  width: 20%;
+}
+
+.VueTables >>> * tr th:nth-child(5) {
+  width: 10%;
+}
+</style>

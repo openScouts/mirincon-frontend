@@ -10,7 +10,7 @@
           <div class="card-body">
             <template v-if="grid.items.length">
               <b-table :items="grid.items" :fields="grid.fields" class="table-sm">
-                <template v-slot:cell(datos)="data">
+                <template #cell(datos)="data">
                   <b-row>
                     <b-col sm="2">
                       <img :src="'/img/areas/' + data.item.area_codigo.toLowerCase() + '.svg'" width="50" height="50" />
@@ -28,7 +28,7 @@
                     </b-col>
                   </b-row>
                 </template>
-                <template v-slot:cell(informacion)="data">
+                <template #cell(informacion)="data">
                   <div>
                     <strong class="text-muted">Cierre Inscripciones: </strong>
                     {{ data.item.cierre_inscripcion | Date }}
@@ -42,7 +42,7 @@
                     {{ data.item.responsable }}
                   </div>
                 </template>
-                <template v-slot:cell(opciones)="data">
+                <template #cell(opciones)="data">
                   <nuxt-link :to="'/eventos/administracion/detalle/' + data.item.uuid">Ver Detalle</nuxt-link>
                   <template v-if="user.is.zona">
                     |
@@ -62,25 +62,6 @@
     </b-row>
   </ContentWrapper>
 </template>
-
-<style scoped>
-/* Defino el Ancho de la primer columna */
-.VueTables >>> * tr th:nth-child(1) {
-  width: 15%;
-}
-
-.VueTables >>> * tr th:nth-child(2) {
-  width: 5%;
-}
-
-.VueTables >>> * tr th:nth-child(3) {
-  width: 40%;
-}
-
-.VueTables >>> * tr th:nth-child(8) {
-  width: 5%;
-}
-</style>
 
 <script>
 export default {
@@ -146,3 +127,22 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+/* Defino el Ancho de la primer columna */
+.VueTables >>> * tr th:nth-child(1) {
+  width: 15%;
+}
+
+.VueTables >>> * tr th:nth-child(2) {
+  width: 5%;
+}
+
+.VueTables >>> * tr th:nth-child(3) {
+  width: 40%;
+}
+
+.VueTables >>> * tr th:nth-child(8) {
+  width: 5%;
+}
+</style>

@@ -37,6 +37,11 @@ export default {
       verHabilitaciones: false, // este propiedad se modifica internamente desde el componente Habilitaciones
     }
   },
+  head() {
+    return {
+      titleTemplate: 'Mi Formacion - %s ',
+    }
+  },
   computed: {
     personaUUID() {
       if (this.uuid === 'uuid') {
@@ -44,11 +49,6 @@ export default {
       }
       return this.uuid
     },
-  },
-  head() {
-    return {
-      titleTemplate: 'Mi Formacion - %s ',
-    }
   },
 }
 </script>

@@ -23,6 +23,30 @@
     </div>
   </div>
 </template>
+
+<script>
+import Vue from 'vue'
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
+
+export default {
+  auth: 'guest',
+  mounted() {
+    this.classBody()
+  },
+  methods: {
+    classBody() {
+      const body = document.body
+      body.removeAttribute('class')
+      body.classList.add('fondo_imagen')
+      body.classList.add('fondo_color')
+      body.classList.add('flex-row')
+      body.classList.add('align-items-center')
+    },
+  },
+}
+</script>
+
 <style scoped>
 .main-head {
   height: 150px;
@@ -80,26 +104,3 @@
   }
 }
 </style>
-
-<script>
-import Vue from 'vue'
-import VueParticles from 'vue-particles'
-Vue.use(VueParticles)
-
-export default {
-  auth: 'guest',
-  mounted() {
-    this.classBody()
-  },
-  methods: {
-    classBody() {
-      const body = document.body
-      body.removeAttribute('class')
-      body.classList.add('fondo_imagen')
-      body.classList.add('fondo_color')
-      body.classList.add('flex-row')
-      body.classList.add('align-items-center')
-    },
-  },
-}
-</script>

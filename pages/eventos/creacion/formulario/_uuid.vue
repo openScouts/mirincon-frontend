@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 <template>
   <ContentWrapper>
     <template slot="titulo">
@@ -260,10 +259,7 @@
               </select>
               <error input="rama" />
             </b-form-group>
-            <b-form-group
-              v-if="datos.area.codigo !== 'AMS' && evento.eventos_tipo_id !== 12"
-              label="Genera Certificado:"
-            >
+            <b-form-group label="Genera Certificado:">
               <b-form-select v-model="evento.genera_certificado" size="sm">
                 <option value="S">Genera Certificado</option>
                 <option value="N">No genera Certificado</option>
@@ -398,8 +394,19 @@ export default {
         }),
       ]).then(() => {
         this.$nuxt.$loading.finish()
+
+        // Solo defino si genera certificado, si el valor de null
+        if (this.evento.genera_certificado === undefined) {
+          // una vez que obtengo todos los datos de la experiencia, si es de formacion pongo por default que si genera certificado
+          if (this.datos.area.codigo !== 'AMS' && this.evento.eventos_tipo_id !== 12) {
+            this.evento.genera_certificado = 'N'
+          } else {
+            this.evento.genera_certificado = 'S'
+          }
+        }
       })
     },
+
     submitCrear() {
       return this.$axios
         .post('/eventos/eventos', this.evento)

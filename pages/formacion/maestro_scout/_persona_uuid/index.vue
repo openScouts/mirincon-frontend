@@ -18,7 +18,7 @@
         </button>
       </div>
       <b-table :items="grid.items" :fields="grid.fields" striped hover small responsive>
-        <template v-slot:cell(fecha)="data">{{ data.value | Date }}</template>
+        <template #cell(fecha)="data">{{ data.value | Date }}</template>
       </b-table>
     </b-card>
     <b-modal id="modal-1" ref="modal" :title="'Cargar Nueva Actualización a ' + persona.apellidoynombre" centered>

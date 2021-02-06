@@ -44,14 +44,14 @@
         <hr />
         <h3>Listado de Participantes</h3>
         <b-table :items="grid.items" :fields="grid.fields" class="table-sm">
-          <template v-slot:cell(check)="data">
+          <template #cell(check)="data">
             <b-form-checkbox v-model="form.participantes" :value="data.item.uuid" switch />
           </template>
-          <template v-slot:cell(persona)="data">
+          <template #cell(persona)="data">
             {{ data.item.persona.apellidoynombre }}
           </template>
-          <template v-slot:cell(persona.funciones)="data">
-            <div-funciones :funciones="data.value" />
+          <template #cell(funciones)="data">
+            <div-funciones :funciones="data.funciones.value" />
           </template>
         </b-table>
       </div>
@@ -88,7 +88,7 @@ export default {
             label: 'Datos',
           },
           {
-            key: 'persona.funciones',
+            key: 'funciones',
             label: 'Funciones',
           },
           {

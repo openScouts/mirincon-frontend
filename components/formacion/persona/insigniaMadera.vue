@@ -2,12 +2,12 @@
   <div>
     <template v-if="gridIm.items.length">
       <b-table striped hover small responsive stacked="md" :items="gridIm.items" :fields="gridIm.fields">
-        <template v-slot:cell(otorgada)="data">{{ data.value | Date }}</template>
+        <template #cell(otorgada)="data">{{ data.value | Date }}</template>
 
-        <template v-slot:cell(rama)="data">
+        <template #cell(rama)="data">
           <div-rama :rama="data.value" />
         </template>
-        <template v-slot:cell(opciones)="data">
+        <template #cell(opciones)="data">
           <template v-if="$can('formacion.maestro_scout.abm')">
             <nuxt-link
               :to="'/formacion/maestro_scout/formulario/' + data.item.uuid"

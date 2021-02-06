@@ -50,17 +50,6 @@
   </ContentWrapper>
 </template>
 
-<style scoped>
-/* Defino el Ancho de la primer columna */
-.VueTables >>> * tr th:nth-child(1) {
-  width: 40% !important;
-}
-
-.VueTables >>> * tr th:nth-child(2) {
-  width: 40% !important;
-}
-</style>
-
 <script>
 import modalPassword from '@/components/administracion/password'
 
@@ -111,3 +100,14 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+/* Defino el Ancho de la primer columna */
+.VueTables >>> * tr th:nth-child(1) {
+  width: 40% !important;
+}
+
+.VueTables >>> * tr th:nth-child(2) {
+  width: 40% !important;
+}
+</style>

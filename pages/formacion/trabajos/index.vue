@@ -21,7 +21,7 @@
               stacked="md"
               class="table-sm"
             >
-              <template v-slot:cell(detalle)="data">
+              <template #cell(detalle)="data">
                 <div class="clearfix">
                   <div-persona :persona="data.item.persona"></div-persona>
                 </div>
@@ -35,7 +35,7 @@
                 </div>
               </template>
 
-              <template v-slot:cell(opciones)="data">
+              <template #cell(opciones)="data">
                 <nuxt-link :to="'/formacion/trabajos/' + data.item.uuid" class="btn btn-primary btn-sm">
                   <i class="fas fa-binoculars" />
                   Ver
@@ -62,13 +62,13 @@
               stacked="md"
               class="table-sm"
             >
-              <template v-slot:cell(entrega_fecha)="data">
+              <template #cell(entrega_fecha)="data">
                 {{ data.item.entrega_fecha | Date }}
               </template>
-              <template v-slot:cell(experiencia_fecha)="data">
+              <template #cell(experiencia_fecha)="data">
                 {{ data.item.experiencia_fecha | Date }}
               </template>
-              <template v-slot:cell(opciones)="data">
+              <template #cell(opciones)="data">
                 <nuxt-link :to="'/formacion/trabajos/' + data.item.uuid" class="btn btn-primary btn-sm">
                   <i class="fas os-accion-trabajo" />
                   Gestionar

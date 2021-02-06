@@ -26,14 +26,14 @@
             <button type="button" class="btn btn-danger" @click="filtrado('no')">Ver No Anotado</button>
           </div>
           <b-table :items="dataset" :fields="columns" striped hover small responsive class="no-more-tables">
-            <template v-slot:cell(persona)="data">
+            <template #cell(persona)="data">
               <div-persona :persona="data.item.persona" />
             </template>
-            <template v-slot:cell(funcion)="data">
+            <template #cell(funcion)="data">
               <div-funciones :funciones="data.item.persona.funciones" />
             </template>
 
-            <template v-slot:cell(estadoss)="data">
+            <template #cell(estadoss)="data">
               <template v-if="data.item.inscripto_uuid">
                 <div class="text-success"><i class="fas fa-thumbs-up" /> Si Participa</div>
               </template>
@@ -42,7 +42,7 @@
               </template>
             </template>
 
-            <template v-slot:cell(opciones)="data">
+            <template #cell(opciones)="data">
               <div
                 v-if="$moment(evento.cierre_inscripcion).format('YYYY-MM-DD') >= $moment().format('YYYY-MM-DD')"
                 class="text-center"
@@ -104,6 +104,11 @@ export default {
       evento: [],
     }
   },
+  head() {
+    return {
+      titleTemplate: 'Gestion de Eventos - %s ',
+    }
+  },
   created() {
     this.getPersona()
     this.getEventos()
@@ -160,11 +165,6 @@ export default {
         this.evento = response.data.data
       })
     },
-  },
-  head() {
-    return {
-      titleTemplate: 'Gestion de Eventos - %s ',
-    }
   },
 }
 </script>

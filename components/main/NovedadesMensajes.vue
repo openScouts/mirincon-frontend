@@ -10,11 +10,7 @@
     </div>
   </div>
 </template>
-<style scoped>
-a {
-  text-decoration: none;
-}
-</style>
+
 <script>
 export default {
   data: () => ({
@@ -32,3 +28,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+a {
+  text-decoration: none;
+}
+</style>

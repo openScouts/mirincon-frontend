@@ -3,8 +3,8 @@
 </template>
 <script>
 export default {
-  middleware: 'guest',
   layout: 'login',
+  middleware: 'guest',
   mounted() {
     this.logout()
   },

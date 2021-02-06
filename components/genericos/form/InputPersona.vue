@@ -31,13 +31,13 @@
         <div v-if="grid.tableData.length" class="col-12">
           <br />
           <b-table :items="grid.tableData" :fields="grid.columns">
-            <template v-slot:cell(nombre)="data">
+            <template #cell(nombre)="data">
               <div-persona :persona="data.item" />
             </template>
-            <template v-slot:cell(funcion)="data">
+            <template #cell(funcion)="data">
               <div-funciones :funciones="data.item.funciones" />
             </template>
-            <template v-slot:cell(opciones)="data">
+            <template #cell(opciones)="data">
               <button class="btn btn-success btn-sm" @click="setPersonaUuid(data.item.uuid, data.item.apellidoynombre)">
                 Seleccionar
               </button>
@@ -52,17 +52,7 @@
     </b-modal>
   </div>
 </template>
-<style scoped>
-table >>> th:nth-child(1) {
-  width: 35%;
-}
-table >>> th:nth-child(2) {
-  width: 55%;
-}
-table >>> th:nth-child(3) {
-  width: 10%;
-}
-</style>
+
 <script>
 export default {
   props: {
@@ -149,3 +139,15 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+table >>> th:nth-child(1) {
+  width: 35%;
+}
+table >>> th:nth-child(2) {
+  width: 55%;
+}
+table >>> th:nth-child(3) {
+  width: 10%;
+}
+</style>

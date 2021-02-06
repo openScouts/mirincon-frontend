@@ -10,15 +10,15 @@
         <div id="pendientes" class="card card-accent-primary">
           <div class="card-header">Im Pendientes</div>
           <b-table :items="grid.items" :fields="grid.fields" striped hover small responsive stacked="md">
-            <template v-slot:cell(datos)="data">
+            <template #cell(datos)="data">
               <div-persona :persona="data.item.persona" />
             </template>
-            <template v-slot:cell(detalle)="data">
+            <template #cell(detalle)="data">
               <strong class="text-muted">{{ data.item.linea }}</strong>
               <p class="text-muted" title="Rama solicitada">Rama: <div-rama :rama="data.item.rama" /></p>
               <p class="text-muted font-italic">Fecha: {{ data.item.f_solicitud | Date }}</p>
             </template>
-            <template v-slot:cell(opciones)="data">
+            <template #cell(opciones)="data">
               <b-button
                 :to="'/formacion/maestro_scout/formulario/' + data.item.uuid"
                 size="sm"

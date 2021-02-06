@@ -2,7 +2,7 @@
   <div>
     <template v-if="grid.items.length">
       <b-table striped hover small responsive stacked="md" :items="grid.items" :fields="grid.fields">
-        <template v-slot:cell(fecha)="data">{{ data.item.fecha | Date }}</template>
+        <template #cell(fecha)="data">{{ data.item.fecha | Date }}</template>
       </b-table>
     </template>
     <template v-else>

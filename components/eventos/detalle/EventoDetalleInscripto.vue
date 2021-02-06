@@ -85,26 +85,6 @@
   </div>
 </template>
 
-<style scoped>
-/* Defino el Ancho de la primer columna */
-.VueTables >>> * tr th:nth-child(1) {
-  width: 30%;
-}
-
-.VueTables >>> * tr th:nth-child(2) {
-  width: 35%;
-}
-
-.VueTables >>> * tr th:nth-child(3) {
-  width: 12%;
-}
-.VueTables >>> * tr th:nth-child(4) {
-  width: 13%;
-}
-.VueTables >>> * tr th:nth-child(5) {
-  width: 10%;
-}
-</style>
 <script>
 export default {
   props: {
@@ -270,3 +250,24 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+/* Defino el Ancho de la primer columna */
+.VueTables >>> * tr th:nth-child(1) {
+  width: 30%;
+}
+
+.VueTables >>> * tr th:nth-child(2) {
+  width: 35%;
+}
+
+.VueTables >>> * tr th:nth-child(3) {
+  width: 12%;
+}
+.VueTables >>> * tr th:nth-child(4) {
+  width: 13%;
+}
+.VueTables >>> * tr th:nth-child(5) {
+  width: 10%;
+}
+</style>

@@ -24,29 +24,23 @@
         <div id="cumpleanios" class="card card-accent-primary">
           <div class="card-header">Cumpleaños Cercanos</div>
           <b-table striped hover small responsive stacked="md" :items="grid.items" :fields="grid.fields">
-            <template v-slot:cell(apellidoynombre)="data">
+            <template #cell(apellidoynombre)="data">
               <template v-if="grid.items.length < 15">
                 <div-persona :persona="data.item" />
               </template>
               <template v-else>{{ data.item.apellidoynombre }}</template>
             </template>
-            <template v-slot:cell(funciones)="data">
+            <template #cell(funciones)="data">
               <div-funciones :funciones="data.value" />
             </template>
-            <template v-slot:cell(cumpleanios)="data">{{ data.value }}</template>
+            <template #cell(cumpleanios)="data">{{ data.value }}</template>
           </b-table>
         </div>
       </b-col>
     </b-row>
   </ContentWrapper>
 </template>
-<style scoped>
-@media (max-width: 960px) {
-  .contenedorDerecho {
-    margin-top: 20px;
-  }
-}
-</style>
+
 <script>
 import Novedades from '@/components/main/NovedadesMensajes'
 export default {
@@ -77,6 +71,11 @@ export default {
       },
     }
   },
+  head() {
+    return {
+      titleTemplate: 'Panel de Control - %s ',
+    }
+  },
   mounted() {
     this.getData()
   },
@@ -87,10 +86,13 @@ export default {
       })
     },
   },
-  head() {
-    return {
-      titleTemplate: 'Panel de Control - %s ',
-    }
-  },
 }
 </script>
+
+<style scoped>
+@media (max-width: 960px) {
+  .contenedorDerecho {
+    margin-top: 20px;
+  }
+}
+</style>

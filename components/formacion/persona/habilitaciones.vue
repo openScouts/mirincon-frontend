@@ -7,7 +7,7 @@
 
         METE pendiente de aval => avalado
         -->
-        <template v-slot:cell(fecha)="data">{{ data.item.fecha | Date }}</template>
+        <template #cell(fecha)="data">{{ data.item.fecha | Date }}</template>
       </b-table>
     </template>
     <template v-else>

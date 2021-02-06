@@ -18,11 +18,7 @@
     <option v-if="solo !== 'P'" value="G" class="asdasdasd">&#xea2f; Gestión Intitucional</option>
   </select>
 </template>
-<style scoped>
-.asdasdasd {
-  font-size: 1.2rem;
-}
-</style>
+
 <script>
 export default {
   props: {
@@ -59,3 +55,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.asdasdasd {
+  font-size: 1.2rem;
+}
+</style>

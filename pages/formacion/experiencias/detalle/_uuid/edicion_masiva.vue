@@ -97,27 +97,6 @@
   </ContentWrapper>
 </template>
 
-<style scoped>
-table >>> tr th:nth-child(1) {
-  width: 30%;
-}
-
-table >>> tr th:nth-child(2) {
-  width: 10%;
-}
-
-table >>> tr th:nth-child(3) {
-  width: 10%;
-}
-
-table >>> tr th:nth-child(4) {
-  width: 20%;
-}
-table >>> tr th:nth-child(5) {
-  width: 20%;
-}
-</style>
-
 <script>
 export default {
   meta: {
@@ -211,3 +190,24 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+table >>> tr th:nth-child(1) {
+  width: 30%;
+}
+
+table >>> tr th:nth-child(2) {
+  width: 10%;
+}
+
+table >>> tr th:nth-child(3) {
+  width: 10%;
+}
+
+table >>> tr th:nth-child(4) {
+  width: 20%;
+}
+table >>> tr th:nth-child(5) {
+  width: 20%;
+}
+</style>
