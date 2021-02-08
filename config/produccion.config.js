@@ -14,7 +14,7 @@ const extend = {
     PUSHER_APP_CLUSTER: '"us2"',
     API_HOST: 'https://api.mirincon.com.ar/api',
   },
-  modules: ['@nuxtjs/onesignal', '@nuxtjs/sentry'],
+  modules: ['@nuxtjs/onesignal'], // , '@nuxtjs/sentry'
   buildModules: [
     [
       '@nuxtjs/google-analytics',
