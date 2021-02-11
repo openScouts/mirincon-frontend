@@ -45,9 +45,7 @@
                 <b-button variant="info" :to="'/main/eventos/' + data.item.uuid">Avanzado</b-button>
               </template>
               <template v-else>
-                <template
-                  v-if="$moment(data.item.f_cierre_inscripcion).format('YYYY-MM-DD') >= $moment().format('YYYY-MM-DD')"
-                >
+                <template v-if="validoEstadoEvento(data.item)">
                   <template v-if="data.item.inscripto_uuid">
                     <button v-promise-btn class="btn btn-danger" @click="darDeBajaInscripto(data.item.inscripto_uuid)">
                       Darme de Baja
@@ -61,7 +59,7 @@
                   <div class="text-center small">
                     Inscripcion Cerrada el
                     <br />
-                    {{ data.item.f_cierre_inscripcion | Date }}
+                    {{ data.item.cierre_inscripcion | Date }}
                   </div>
                 </template>
               </template>
@@ -125,6 +123,11 @@ export default {
     this.getEventos()
   },
   methods: {
+    validoEstadoEvento(evento) {
+      const fechaCierre = this.$moment(evento.cierre_inscripcion).format('YYYY-MM-DD')
+      return this.$moment().diff(fechaCierre, 'days') < 1
+      // return this.$moment(evento.f_cierre_inscripcion).format('YYYY-MM-DD') >= this.$moment().format('YYYY-MM-DD')
+    },
     modalPauta(pauta) {
       this.$swal.fire({
         title: 'Detalle de la Pauta',

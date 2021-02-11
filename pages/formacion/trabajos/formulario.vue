@@ -36,11 +36,10 @@
         <b-form-group label="Consigna del Trabajo Practico:">
           <error input="consigna" />
           <div style="height: 200px">
-            <quill-editor v-model="form.consigna" style="height: 150px" />
+            <quill-editor v-model="form.consigna" :options="editorOption" style="height: 150px" />
           </div>
         </b-form-group>
         <button v-promise-btn class="btn btn-block btn-success" @click="crearTrabajo">Crear Trabajo</button>
-
         <hr />
         <h3>Listado de Participantes</h3>
         <b-table :items="grid.items" :fields="grid.fields" class="table-sm">
@@ -51,7 +50,10 @@
             {{ data.item.persona.apellidoynombre }}
           </template>
           <template #cell(funciones)="data">
-            <div-funciones :funciones="data.funciones.value" />
+            <div-funciones :funciones="data.item.persona.funciones" />
+          </template>
+          <template #cell(rama)="data">
+            {{ data.item.persona.rama }}
           </template>
         </b-table>
       </div>
@@ -60,6 +62,7 @@
 </template>
 <script>
 import { quillEditor } from 'vue-quill-editor'
+
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
