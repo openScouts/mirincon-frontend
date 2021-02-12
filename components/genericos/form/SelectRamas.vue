@@ -2,7 +2,7 @@
   <select
     v-model="rama"
     :class="'form-control ramas ' + clase"
-    style="font-family: caseroft-iconos-scout, sans-serif"
+    style="font-family: open-scouts, sans-serif"
     @input="
       (e) => {
         $emit('input', e.target.value)
@@ -10,12 +10,12 @@
     "
   >
     <option value="0" selected="selected">Seleccione una Rama</option>
-    <option value="T" class="asdasdasd">&#xea30; Castores</option>
+    <option value="T" class="asdasdasd">&#xea44; Castores</option>
     <option value="L" class="asdasdasd">&#xea41; Lobatos y Lobeznas</option>
     <option value="S" class="asdasdasd">&#xea43; Scouts</option>
     <option value="C" class="asdasdasd">&#xea40; Caminates</option>
     <option value="R" class="asdasdasd">&#xea42; Rovers</option>
-    <option v-if="solo !== 'P'" value="G" class="asdasdasd">&#xea2f; Gestión Intitucional</option>
+    <option v-if="solo !== 'P'" value="G" class="asdasdasd">&#xea44; Gestión Intitucional</option>
   </select>
 </template>
 
@@ -59,5 +59,6 @@ export default {
 <style scoped>
 .asdasdasd {
   font-size: 1.2rem;
+  font-family: 'open-scouts', sans-serif;
 }
 </style>
