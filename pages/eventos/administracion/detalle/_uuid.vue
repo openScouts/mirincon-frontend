@@ -115,8 +115,9 @@
                   :disabled="BtnDisabled"
                   variant="danger"
                   @click="cambiarEstadoEvento(2)"
-                  >Abrir Inscripcion</b-button
                 >
+                  Abrir Inscripcion
+                </b-button>
                 <b-button
                   v-if="evento.eventos_estado_id === 2"
                   :disabled="BtnDisabled"
@@ -211,6 +212,17 @@ export default {
     getEvento() {
       this.$axios.get(`/eventos/eventos/${this.uuid}`).then((response) => {
         this.evento = response.data.data
+
+        /// si el evento esta en estado 4, y crea ams,
+        // deberia deberia tener un curso_uuid , si no lo tiene , vuelvo a recargar el evento cada
+        // 4 segundos
+        if (!this.evento.curso_uuid && this.evento.eventos_estado_id === 4 && this.evento.crea_ams) {
+          setTimeout(this.getEvento(), 4000)
+        }
+
+        // Reactivo los botones una vez que recargue completamente el evento
+        // esto lo hago depues de cambiar estado
+        this.BtnDisabled = false
       })
     },
 
@@ -241,7 +253,6 @@ export default {
                 estado: nuevoEstado,
               })
               .then(() => {
-                this.BtnDisabled = false
                 this.getEvento()
               })
           } else {
