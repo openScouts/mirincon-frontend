@@ -1,7 +1,7 @@
 <template>
   <select
     v-model="rama"
-    :class="'form-control ramas ' + clase"
+    :class="'form-control form-control-sm ramas ' + clase"
     style="font-family: open-scouts, sans-serif"
     @input="
       (e) => {
