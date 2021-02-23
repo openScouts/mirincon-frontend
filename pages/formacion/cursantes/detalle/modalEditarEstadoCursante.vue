@@ -64,7 +64,7 @@ import Alerta from '~/components/genericos/Alerta.vue'
 export default {
   components: { Alerta },
   meta: {
-    auth: { permiso: 'formacion.experiencias' },
+    auth: { permiso: 'formacion.cursantes.administrar' },
   },
   data() {
     return {

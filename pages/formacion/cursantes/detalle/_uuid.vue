@@ -99,7 +99,7 @@ import modalEditar from './modalEditarEstadoCursante'
 Vue.component('ModalEditar', modalEditar)
 export default {
   meta: {
-    auth: { permiso: 'gestion.persona' },
+    auth: { permiso: 'formacion.cursantes.administrar' },
   },
   data() {
     return {
