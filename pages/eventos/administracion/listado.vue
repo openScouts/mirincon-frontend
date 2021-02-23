@@ -75,6 +75,10 @@
             <strong class="text-muted">Responsable: </strong>
             {{ props.row.responsable }}
           </div>
+          <div>
+            <strong class="text-muted">Inscriptos: </strong>
+            {{ props.row.inscriptos }}
+          </div>
         </template>
 
         <template slot="estado" slot-scope="props">{{ props.row.estado }}</template>
@@ -100,6 +104,12 @@ export default {
     return {
       select: {
         tipo: [
+          { value: 'miseventos', text: 'Mis Eventos' },
+          { value: 'disponibles', text: 'Eventos Publicos' },
+          { value: 'todos', text: 'Todos' },
+        ],
+        /*
+        tipo: [
           { value: 'todos_los_zonales', text: 'Todos los Zonales' },
           { value: 'privados', text: 'Mis Eventos' },
           { value: 'distrito', text: 'Distritales' },
@@ -107,6 +117,7 @@ export default {
           { value: 'otros', text: 'Otros' },
           { value: 'todos', text: 'Otros' },
         ],
+        */
         area: [
           { value: null, text: 'Todos' },
           { value: 'ams', text: 'Adultos en el Movimiento' },
@@ -147,7 +158,7 @@ export default {
       this.$router.push({ query: this.options.params })
       this.ver_tabla = true
       if (this.$refs.tabla !== undefined) {
-        this.$refs.tabla.data = []
+        // this.$refs.tabla.data = []
         this.$refs.tabla.loading = true
         this.$refs.tabla.refresh()
       }

@@ -1,8 +1,6 @@
 <template>
   <div class="row">
     <div class="centrado col-12">
-      <!--
-      <i class="fas fa-umbrella-beach fa-2x"></i>-->
       <i class="fas os-canoa fa-3x" />
     </div>
     <div class="centrado col-12">

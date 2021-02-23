@@ -52,7 +52,7 @@
       <h2 class="text-center">Soy Nuevo</h2>
       <p>
         Los nuevos educadores deben registrarse por primera vez.
-        <br />solo se permitirá el registro de los adultos afiliados dentro de scout de argentina
+        <br />Solo se permitirá el registro de los adultos afiliados dentro de Scouts de Argentina
       </p>
       <nuxt-link class="btn text-white btn-block btn-info" to="/login/registro">¡Regístrate ahora!</nuxt-link>
     </div>

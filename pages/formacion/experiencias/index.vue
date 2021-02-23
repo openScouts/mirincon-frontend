@@ -1,7 +1,7 @@
 <template>
   <ContentWrapper>
     <template slot="titulo">
-      <titulo>administrador de Experiencias</titulo>
+      <titulo>Administrador de Experiencias</titulo>
     </template>
     <btn-app to="/formacion/experiencias/listado" icon="fa os-scout-saludo">Listado</btn-app>
 
