@@ -4,7 +4,7 @@
       <titulo>
         Detalle
         <!--  Si el evento es diferente de borrado .. muestro el menu-->
-        <template v-if="!user.is.formador && !evento.borrado && evento.soy_propietario" slot="acciones">
+        <template v-if="!user.is.soloformador && !evento.borrado && evento.soy_propietario" slot="acciones">
           <b-dropdown variant="success" text="Acciones" size="sm" class="m-md-2">
             <b-dropdown-item @click="$refs.modalInscriptos.showModal()">Agregar Participantes</b-dropdown-item>
             <b-dropdown-item :to="`/eventos/creacion/formulario/${uuid}`">Editar Evento</b-dropdown-item>
@@ -109,7 +109,7 @@
                   <dd>La Experiencia Revalida IM</dd>
                 </dl>
               </b-col>
-              <b-col v-if="evento.autorizado && !user.is.formador && evento.soy_propietario" md="12">
+              <b-col v-if="evento.autorizado && !user.is.soloformador && evento.soy_propietario" md="12">
                 <b-button
                   v-if="evento.eventos_estado_id === 1"
                   :disabled="BtnDisabled"

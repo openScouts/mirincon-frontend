@@ -73,7 +73,6 @@ export default {
   meta: {
     auth: {
       permiso: 'gestion.persona',
-      rol: 'Admin',
     },
   },
   data() {

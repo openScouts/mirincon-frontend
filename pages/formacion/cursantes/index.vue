@@ -59,7 +59,6 @@ export default {
   meta: {
     auth: {
       permiso: 'formacion.cursantes',
-      rol: 'Admin',
     },
   },
   data() {

@@ -3,7 +3,6 @@
     <template slot="titulo">
       <titulo>
         Detalle Experiencia
-
         <template slot="subtitulo">
           Experiencia: {{ trabajoDetalle.experiencia }}, dictado el {{ trabajoDetalle.experiencia_fecha | Date }} <br />
           Responsable : {{ trabajoDetalle.responsable }} | Fecha Entrega : {{ trabajoDetalle.f_entrega | Date }}
@@ -125,7 +124,7 @@ export default {
 
   created() {
     this.getContador()
-    //    this.getDetalleTrabajo()
+    this.getDetalleTrabajo()
   },
   methods: {
     solosMisTrabajos() {
@@ -150,7 +149,7 @@ export default {
       this.$refs.tabla.refresh()
     },
     getDetalleTrabajo() {
-      this.$axios.get(`formacion/trabajos/${this.$route.params.uuid}/participantes`).then((response) => {
+      this.$axios.get(`formacion/trabajos/${this.$route.params.uuid}`).then((response) => {
         this.trabajoDetalle = response.data.data
       })
     },

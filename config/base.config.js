@@ -79,7 +79,6 @@ module.exports = {
     'bootstrap-vue/nuxt',
     ['@nuxtjs/pwa', { icon: true }], //, { icon: false }
     '@nuxtjs/dotenv',
-    'nuxt-leaflet',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
   ],

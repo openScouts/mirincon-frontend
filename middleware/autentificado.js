@@ -4,6 +4,7 @@ export default function ({ store, error, route, redirect }) {
   // Obtenga autorizaciones para rutas emparejadas (con rutas para hijos también)
   route.meta.map((meta) => {
     if (meta.auth && typeof meta.auth.permiso !== 'undefined') {
+      //  Verifico si tiene Permisos sobre el modulo
       if (Vue.prototype.$can(meta.auth.permiso)) {
         return true
       }

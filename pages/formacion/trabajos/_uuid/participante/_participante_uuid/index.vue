@@ -1,7 +1,14 @@
 <template>
   <ContentWrapper>
     <template slot="titulo">
-      <titulo> Detalle de Trabajos </titulo>
+      <titulo>
+        Detalle de Trabajos
+        <template slot="acciones">
+          <nuxt-link :to="`/formacion/trabajos/${$route.params.uuid}`" class="btn btn-success btn-sm">
+            Volver Atras
+          </nuxt-link>
+        </template>
+      </titulo>
     </template>
     <template v-if="trabajo.estado">
       <template v-if="trabajo.estado === 'Aprobado'">

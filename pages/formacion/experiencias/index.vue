@@ -48,7 +48,9 @@
 <script>
 export default {
   meta: {
-    auth: { permiso: 'formacion.experiencias' },
+    auth: {
+      permiso: 'formacion.experiencias',
+    },
   },
   data() {
     return {

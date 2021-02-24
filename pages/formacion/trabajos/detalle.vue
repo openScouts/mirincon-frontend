@@ -58,7 +58,6 @@ export default {
   meta: {
     auth: {
       //  permiso: 'formacion.trabajos',
-      //  rol: 'Formador'
     },
   },
   data() {

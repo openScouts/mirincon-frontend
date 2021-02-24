@@ -5,7 +5,7 @@
     </template>
     <div class="card card-accent-primary">
       <div class="card-body">
-        <template v-if="!user.is.formador">
+        <template v-if="!user.is.soloformador">
           <div class="tab-container">
             <b-nav class="nav-tabs" fill>
               <b-nav-item :active="tab === 1" @click="tabs(1, 'activos')">Mis Experiencias</b-nav-item>
@@ -48,7 +48,7 @@ export default {
     }
   },
   created() {
-    if (this.user.is.formador) {
+    if (this.user.is.soloformador) {
       this.options.params.tipo = 'FORMADOR'
     }
   },

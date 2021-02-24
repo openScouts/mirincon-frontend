@@ -1,22 +1,37 @@
 <template>
   <ContentWrapper>
     <template slot="titulo">
-      <titulo>Asigancion masiva de Responsables</titulo>
+      <titulo>
+        Asigancion masiva de Responsables
+
+        <template slot="acciones">
+          <nuxt-link :to="`/formacion/trabajos/${$route.params.uuid}`" class="btn btn-success btn-sm">
+            Volver Atras
+          </nuxt-link>
+        </template>
+      </titulo>
     </template>
+
     <div class="card card-accent-primary">
       <div class="card-body">
-        <v-server-table ref="tabla" :columns="columns" :options="options" url="/formacion/trabajos/participantes">
-          <template slot="rel_persona.apellidoynombre" slot-scope="props">
-            <div-persona :persona="props.row.rel_persona" />
+        <v-server-table
+          ref="tabla"
+          :columns="columns"
+          :options="options"
+          :url="'/formacion/trabajos/' + uuid + '/participantes'"
+        >
+          <template slot="persona.apellidoynombre" slot-scope="props">
+            <div-persona :persona="props.row.persona" />
           </template>
+          <!--
           <template slot="rel_persona.rel_funciones" slot-scope="props">
             <div-funciones :funciones="props.row.rel_persona.rel_funciones" />
           </template>
-
-          <template slot="responsable" slot-scope="props">
+-->
+          <template v-if="props.row.estado !== 'Aprobado'" slot="asignado" slot-scope="props">
             <select
               v-model="props.row.asignado_by"
-              class="form-control"
+              class="form-control form-select-sm"
               @change="
                 setResponsable({
                   participante_uuid: props.row.uuid, // UUID del participante
@@ -25,7 +40,7 @@
               "
             >
               <template v-for="valor in formadores">
-                <option :key="valor.uuid" :value="valor.persona_id">{{ valor.nombre }}</option>
+                <option :key="valor.id" :value="valor.id">{{ valor.apellidoynombre }}</option>
               </template>
             </select>
           </template>
@@ -37,14 +52,12 @@
 
 <script>
 export default {
-  meta: {
-    auth: { rol: 'Formador' },
-  },
+  meta: {},
   data() {
     return {
       select: [],
       formadores: {},
-      columns: ['rel_persona.apellidoynombre', 'responsable', 'rel_estado.nombre', 'opciones'],
+      columns: ['persona.apellidoynombre', 'asignado', 'estado', 'opciones'],
       options: {
         pagination: { dropdown: false },
         perPage: 9999,
@@ -53,25 +66,30 @@ export default {
           trabajo_uuid: this.$route.params.uuid,
         },
         headings: {
-          'rel_persona.apellidoynombre': 'Nombre',
-          'rel_asiganado.apellidoynombre': 'Formador',
-          'rel_estado.nombre': 'Estado',
+          'persona.apellidoynombre': 'Nombre',
+          asignado: 'Formador',
+          estado: 'Estado',
         },
       },
       total: 0,
     }
+  },
+  computed: {
+    uuid() {
+      return this.$route.params.uuid
+    },
   },
   created() {
     this.getFormadores()
   },
   methods: {
     getFormadores() {
-      this.$axios.get('/formacion/formadores/listado').then((response) => {
-        this.formadores = response.data.data
+      this.$axios.get('/varios/formacion/formadores').then((response) => {
+        this.formadores = response.data
       })
     },
     setResponsable(data) {
-      this.$axios.post('/formacion/trabajos/participantes/asigno_responsable', data)
+      this.$axios.put('/formacion/trabajos/' + this.uuid + '/participantes/responsable/asignar', data)
     },
   },
 }
