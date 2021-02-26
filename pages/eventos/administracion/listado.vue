@@ -28,7 +28,7 @@
               </b-form-group>
             </b-col>
             <b-col sm="12" lg="12">
-              <button class="btn btn-primary" @click.prevent="getBusqueda()">Buscar</button>
+              <button class="btn btn-primary" @click.prevent="getBusqueda()">Filtrar</button>
             </b-col>
           </b-row>
         </b-form>
@@ -61,7 +61,6 @@
             </b-col>
           </b-row>
         </template>
-
         <template slot="informacion" slot-scope="props">
           <div>
             <strong class="text-muted">Cierre Inscripciones: </strong>
@@ -92,7 +91,6 @@
     </div>
   </ContentWrapper>
 </template>
-
 <script>
 export default {
   meta: {
@@ -105,29 +103,18 @@ export default {
       select: {
         tipo: [
           { value: 'miseventos', text: 'Mis Eventos' },
-          { value: 'disponibles', text: 'Eventos Publicos' },
-          { value: 'todos', text: 'Todos' },
+          { value: 'publicos', text: 'Eventos Publicos' },
         ],
-        /*
-        tipo: [
-          { value: 'todos_los_zonales', text: 'Todos los Zonales' },
-          { value: 'privados', text: 'Mis Eventos' },
-          { value: 'distrito', text: 'Distritales' },
-          { value: 'zona', text: 'Zonales' },
-          { value: 'otros', text: 'Otros' },
-          { value: 'todos', text: 'Otros' },
-        ],
-        */
         area: [
           { value: null, text: 'Todos' },
           { value: 'ams', text: 'Adultos en el Movimiento' },
           { value: 'otros', text: 'Otras Areas' },
         ],
         estado: [
-          { value: 'activos', text: 'activos' },
-          { value: 'archivados', text: 'archivados' },
-          { value: 'borrados', text: 'borrados' },
-          { value: 'todos', text: 'todos' },
+          { value: 'activos', text: 'Activos' },
+          { value: 'archivados', text: 'Archivados' },
+          { value: 'borrados', text: 'Borrados' },
+          { value: 'todos', text: 'Todos' },
         ],
       },
       tab: 1 /* TAB SELECCIONADA */,
@@ -135,7 +122,7 @@ export default {
       options: {
         filterable: false,
         params: {
-          tipo: 'todos_los_zonales',
+          tipo: 'miseventos',
           area: null,
           estado: 'activos',
         },
