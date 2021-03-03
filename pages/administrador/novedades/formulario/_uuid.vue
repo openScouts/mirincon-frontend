@@ -1,7 +1,7 @@
 <template>
   <ContentWrapper>
     <template slot="titulo">
-      <titulo>Lugares</titulo>
+      <titulo>Creacion de Novedades</titulo>
     </template>
     <div class="card card-accent-primary">
       <div class="card-body">
@@ -25,6 +25,11 @@
             </div>
           </div>
           <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label">Tipo Notificacion</label>
+              <b-form-select v-model="form.tipo" :options="selectTipo"></b-form-select>
+              <error input="tipo" />
+            </div>
             <div class="form-group">
               <label class="control-label">Fecha Inicio</label>
               <b-form-input v-model="form.f_inicio" type="date" placeholder="Fecha Inicio" />
@@ -68,6 +73,12 @@ export default {
   data() {
     return {
       form: {}, // aca van los datos del formulario completado
+      selectTipo: [
+        { value: 'info', text: 'Informacion' },
+        { value: 'correcto', text: 'Correcto' },
+        { value: 'alerta', text: 'Alerta' },
+        { value: 'error', text: 'Error' },
+      ],
     }
   },
   created() {
