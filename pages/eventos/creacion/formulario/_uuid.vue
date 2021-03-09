@@ -314,7 +314,7 @@ import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 
 // Vue.component('VueCtkDateTimePicker', VueCtkDateTimePicker)
-// Vue.use(VueQuillEditor, { placeholder: 'Ingrese el texto' })
+Vue.use(quillEditor, { placeholder: 'Ingrese el texto' })
 Vue.use(browserDetect)
 export default {
   meta: {

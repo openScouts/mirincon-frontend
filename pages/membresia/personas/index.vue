@@ -5,8 +5,8 @@
     </template>
     <div class="row">
       <div class="col-md-6 col-12">
-        <btn-app to="/gestion/personas/listado" icon="fa os-accion-educador-list">Listado</btn-app>
-        <btn-app to="/gestion/personas/buscar" icon="fa os-accion-scout-buscar">Buscar</btn-app>
+        <btn-app to="/membresia/personas/listado" icon="fa os-accion-educador-list">Listado</btn-app>
+        <btn-app to="/membresia/personas/buscar" icon="fa os-accion-scout-buscar">Buscar</btn-app>
       </div>
       <div class="col-md-6 col-12">
         <div class="card card-accent-primary">
@@ -24,7 +24,7 @@
 import pieGenerico from '~/components/genericos/charts/PieGenerico'
 export default {
   meta: {
-    auth: { permiso: 'gestion.persona' },
+    auth: { permiso: 'membresia.persona' },
   },
   components: { pieGenerico },
 }

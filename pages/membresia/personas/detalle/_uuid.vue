@@ -209,7 +209,7 @@ import InsigniaMadera from '~/components/formacion/persona/insigniaMadera'
 Vue.component('MiFormacion', MiFormacion)
 export default {
   meta: {
-    auth: { permiso: 'gestion.persona' },
+    auth: { permiso: 'membresia.persona' },
   },
   components: { InsigniaMadera, Experiencias, Habilitaciones },
   data() {

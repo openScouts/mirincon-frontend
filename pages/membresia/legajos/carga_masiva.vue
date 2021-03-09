@@ -68,7 +68,7 @@
 <script>
 export default {
   meta: {
-    auth: { permiso: 'gestion.persona' },
+    auth: { permiso: 'membresia.persona' },
   },
   components: {},
   data() {
@@ -139,7 +139,7 @@ export default {
     subirArchivos() {
       const formData = new FormData()
       formData.append('file', this.files)
-      this.$axios.post('/gestion/legajos/carga_masiva', formData, {
+      this.$axios.post('/membresia/legajos/carga_masiva', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

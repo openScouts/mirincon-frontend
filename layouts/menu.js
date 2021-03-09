@@ -23,62 +23,6 @@ export default {
       ],
     },
     {
-      name: 'Gestión',
-      icon: 'fas os-accion-gestion',
-      acl: 'gestion',
-      children: [
-        {
-          name: 'Personas',
-          url: '/gestion/personas',
-          icon: 'fas os-area-programa',
-          acl: 'gestion.personas',
-        },
-        {
-          name: 'Afiliaciones',
-          url: '/gestion/afiliacion',
-          icon: 'fas os-saac-isologo',
-          acl: 'gestion.afiliacion',
-        },
-        {
-          name: 'Funciones',
-          url: '/gestion/funciones',
-          icon: 'fas os-saac-isologo',
-          acl: 'gestion.funciones',
-        },
-        {
-          name: 'Legajos',
-          url: '/gestion/legajos',
-          icon: 'fas os-saac-isologo',
-          acl: 'gestion.legajos',
-        },
-        {
-          name: 'Reportes',
-          url: '/gestion/reportes',
-          icon: 'fas os-saac-isologo',
-          acl: 'gestion.reportes',
-        },
-      ],
-    },
-    {
-      name: 'Programa',
-      icon: 'fas os-area-programa',
-      acl: 'programa',
-      children: [
-        {
-          name: 'Acampe',
-          url: '/programa/acampe',
-          icon: 'fas os-obj-carpa',
-          acl: 'programa.acampe',
-        },
-        {
-          name: 'Ciclos',
-          url: '/programa/ciclos',
-          icon: 'fas fa-retweet',
-          acl: 'programa.ciclos',
-        },
-      ],
-    },
-    {
       name: 'Eventos',
       icon: 'fas os-accion-evento',
       acl: 'eventos.',
@@ -158,6 +102,76 @@ export default {
         },
       ],
     },
+    {
+      name: 'Membresia',
+      icon: 'fas os-accion-gestion',
+      acl: 'membresia',
+      children: [
+        {
+          name: 'Personas',
+          url: '/membresia/personas',
+          icon: 'fas os-area-programa',
+          acl: 'membresia.personas',
+        },
+        {
+          name: 'Afiliaciones',
+          url: '/membresia/afiliacion',
+          icon: 'fas os-saac-isologo',
+          acl: 'membresia.afiliacion',
+        },
+        {
+          name: 'Funciones',
+          url: '/membresia/funciones',
+          icon: 'fab fa-angellist',
+          acl: 'membresia.funciones',
+        },
+        {
+          name: 'Legajos',
+          url: '/membresia/legajos',
+          icon: 'fas fa-file-invoice',
+          acl: 'membresia.legajos',
+        },
+        {
+          name: 'Reportes',
+          url: '/membresia/reportes',
+          icon: 'fas fa-chart-bar',
+          acl: 'membresia.reportes',
+        },
+      ],
+    },
+    {
+      name: 'Gestión',
+      icon: 'fas fa-laptop-code',
+      acl: 'gestion',
+      children: [
+        {
+          name: 'Insumos',
+          url: '/gestion/insumos',
+          icon: 'fas fa-dolly-flatbed',
+          acl: 'gestion.insumos',
+        },
+      ],
+    },
+    {
+      name: 'Programa',
+      icon: 'fas os-area-programa',
+      acl: 'programa',
+      children: [
+        {
+          name: 'Acampe',
+          url: '/programa/acampe',
+          icon: 'fas os-obj-carpa',
+          acl: 'programa.acampe',
+        },
+        {
+          name: 'Ciclos',
+          url: '/programa/ciclos',
+          icon: 'fas fa-retweet',
+          acl: 'programa.ciclos',
+        },
+      ],
+    },
+
     {
       name: 'ADMIN',
       icon: 'fas fa-users',

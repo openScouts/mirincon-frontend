@@ -41,7 +41,7 @@
 <script>
 export default {
   meta: {
-    auth: { permiso: 'gestion.persona' },
+    auth: { permiso: 'membresia.persona' },
   },
   data() {
     return {
@@ -62,7 +62,7 @@ export default {
   methods: {
     crearFuncion() {
       return this.$axios.post('/persona/funcion', this.form).then(() => {
-        this.$router.push({ path: '/gestion/funciones' })
+        this.$router.push({ path: '/membresia/funciones' })
       })
     },
     getComboFunciones(organismoId) {

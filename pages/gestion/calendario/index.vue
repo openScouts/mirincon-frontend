@@ -10,7 +10,7 @@
 <script>
 export default {
   meta: {
-    auth: { permiso: 'gestion.calendario' },
+    auth: { permiso: 'membresia.calendario' },
   },
   data() {
     return {}

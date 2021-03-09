@@ -40,7 +40,7 @@
 <script>
 export default {
   meta: {
-    auth: { permiso: 'gestion.persona' },
+    auth: { permiso: 'membresia.persona' },
   },
   data() {
     return {

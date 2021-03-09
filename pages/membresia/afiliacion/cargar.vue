@@ -22,7 +22,7 @@
 <script>
 export default {
   meta: {
-    auth: { permiso: 'gestion.afiliacion' },
+    auth: { permiso: 'membresia.afiliacion.abm' },
   },
   data() {
     return {
@@ -39,7 +39,8 @@ export default {
       const data = new FormData()
       data.append('afiliacion', document.getElementById('afiliacion').files[0])
       this.$axios.post('/persona/afiliacion/procesar', data).then(() => {
-        this.$refs.fileinput.reset()
+        // this.$refs.fileinput.reset()
+        this.$router.replace('/membresia/afiliacion/')
       })
     },
   },

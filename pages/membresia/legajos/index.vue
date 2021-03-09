@@ -5,8 +5,8 @@
     </template>
     <div class="row">
       <div class="col-md-6 col-12">
-        <btn-app to="/gestion/legajos/carga_masiva" icon="fa fa-upload"> Carga Masiva </btn-app>
-        <btn-app to="/gestion/legajos" icon="fa cis-scout-perfil"> Listado </btn-app>
+        <btn-app to="/membresia/legajos/carga_masiva" icon="fa fa-upload"> Carga Masiva </btn-app>
+        <btn-app to="/membresia/legajos" icon="fas fa-file-invoice"> Listado </btn-app>
       </div>
       <div class="col-md-6 col-12">
         <div class="card card-accent-primary">
@@ -21,7 +21,7 @@
 <script>
 export default {
   meta: {
-    auth: { permiso: 'gestion.persona' },
+    auth: { permiso: 'membresia.persona' },
   },
   components: {},
 }

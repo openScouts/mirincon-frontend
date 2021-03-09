@@ -72,7 +72,7 @@
 export default {
   meta: {
     auth: {
-      permiso: 'gestion.persona',
+      permiso: 'membresia.persona',
     },
   },
   data() {

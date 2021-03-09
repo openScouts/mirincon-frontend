@@ -38,21 +38,21 @@ export default [
         items: [
           {
             name: 'Persona',
-            to: '/gestion/persona',
+            to: '/membresia/persona',
             fontIcon: 'fas os-area-programa',
-            acl: 'gestion.persona',
+            acl: 'membresia.persona',
           },
           {
             name: 'Afiliaciones',
-            to: '/gestion/afiliacion',
+            to: '/membresia/afiliacion',
             fontIcon: 'fas os-saac-isologo',
-            acl: 'gestion.afiliacion',
+            acl: 'membresia.afiliacion',
           },
           {
             name: 'Legajos',
-            to: '/gestion/legajos',
+            to: '/membresia/legajos',
             fontIcon: 'fas os-saac-isologo',
-            acl: 'gestion.persona',
+            acl: 'membresia.persona',
           },
         ],
       },

@@ -5,7 +5,7 @@
     </template>
     <div class="row">
       <div class="col-md-6 col-12">
-        <btn-app to="/gestion/funciones/formulario" icon="fa cis-scout-perfil"> Nueva Funcion </btn-app>
+        <btn-app to="/membresia/funciones/formulario" icon="fab fa-angellist"> Nueva Funcion </btn-app>
       </div>
     </div>
     <div class="card card-accent-primary">
@@ -48,7 +48,7 @@
 <script>
 export default {
   meta: {
-    auth: { permiso: 'gestion.persona' }, //  a futuro agregar gestion.persona.funciones
+    auth: { permiso: 'membresia.persona' }, //  a futuro agregar gestion.persona.funciones
   },
   data() {
     return {
