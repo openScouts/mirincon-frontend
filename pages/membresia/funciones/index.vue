@@ -1,13 +1,54 @@
 <template>
   <ContentWrapper>
     <template slot="titulo">
-      <titulo>Listado</titulo>
+      <titulo
+        >Listado
+
+        <template slot="acciones">
+          <nuxt-link to="/membresia/funciones/formulario" class="btn btn-success btn-sm">
+            <i class="fab fa-angellist"></i>
+            Agregar Funcion
+          </nuxt-link>
+        </template>
+      </titulo>
     </template>
-    <div class="row">
-      <div class="col-md-6 col-12">
-        <btn-app to="/membresia/funciones/formulario" icon="fab fa-angellist"> Nueva Funcion </btn-app>
+
+    <div class="card card-accent-primary">
+      <div class="card-body">
+        <alerta v-if="options.params.rama === 'G'" tipo="info">
+          Por limitacion de la informacion que tiene el aplicativo, cuando se selecciona Rama Gestión, obtiene todas las
+          pesonas que no tienen una rama definida
+        </alerta>
+        <b-form>
+          <b-row>
+            <b-col sm="12" lg="4">
+              <b-form-group label="Ingrese un parametro de busqueda">
+                <b-form-input
+                  v-model="options.params.query"
+                  size="sm"
+                  name="documento"
+                  placeholder="Nombre o Documento"
+                />
+              </b-form-group>
+            </b-col>
+            <b-col sm="12" lg="4">
+              <b-form-group label="Listado de Funciones">
+                <select v-model="options.params.funcion" class="form-control form-control-sm">
+                  <template v-for="funcion in listado_funciones">
+                    <option :key="funcion.id" :value="funcion.id">{{ funcion.nombre }}</option>
+                  </template>
+                </select>
+              </b-form-group>
+            </b-col>
+            <b-col sm="12" lg="12">
+              <button class="btn btn-primary" @click.prevent="getBusqueda()">Filtrar</button>
+            </b-col>
+          </b-row>
+        </b-form>
       </div>
     </div>
+    <hr />
+
     <div class="card card-accent-primary">
       <v-server-table
         ref="tabla"
@@ -52,7 +93,7 @@ export default {
   },
   data() {
     return {
-      tab: 1 /* TAB SELECCIONADA */,
+      listado_funciones: {},
       columns: ['datos', 'funciones', 'opciones'],
       options: {
         filterable: false,
@@ -67,6 +108,9 @@ export default {
       },
     }
   },
+  mounted() {
+    this.listadoDeFunciones()
+  },
   methods: {
     borrarFuncion(uuid) {
       // @PENDIENTE Egregar dialog de confirmacion
@@ -75,6 +119,25 @@ export default {
         this.$refs.tabla.loading = true
         this.$refs.tabla.refresh()
       })
+    },
+
+    listadoDeFunciones() {
+      this.$axios.get('/persona/funcion/listado_manuales').then((response) => {
+        this.listado_funciones = response.data
+      })
+    },
+
+    getBusqueda() {
+      // this.$router.replace({ query: null }) // si no borro NO FUNCIONA !! una Macana
+      // this.$router.replace({ query: this.options.params })
+      this.$router.push({ query: this.options.params })
+
+      this.ver_tabla = true
+      if (this.$refs.tabla !== undefined) {
+        this.$refs.tabla.data = []
+        this.$refs.tabla.loading = true
+        this.$refs.tabla.refresh()
+      }
     },
   },
 }
