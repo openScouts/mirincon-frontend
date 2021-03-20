@@ -29,7 +29,7 @@
                 </div>
               </div>
 
-              <button v-promise-btn class="btn btn-success m-2" @click="crearFuncion()">Gurdar IM</button>
+              <button v-promise-btn class="btn btn-success m-2" @click="crearFuncion()">Crear Nueva Funcion</button>
             </div>
           </div>
         </div>

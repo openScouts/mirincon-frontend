@@ -1,9 +1,8 @@
 <template>
   <ContentWrapper>
     <template slot="titulo">
-      <titulo
-        >Listado
-
+      <titulo>
+        Listado
         <template slot="acciones">
           <nuxt-link to="/membresia/funciones/formulario" class="btn btn-success btn-sm">
             <i class="fab fa-angellist"></i>
@@ -12,7 +11,12 @@
         </template>
       </titulo>
     </template>
-
+    <alerta tipo="info">
+      Mi Rincón, gestiona automáticamente los permisos de los usuarios en base a las funciones establecidas en cruz del
+      sur, pero debido a limitaciones al momento de exportar los datos de cds, desde Mi Rincon solo podemos gestionar 1
+      función, por esta razón es importante, que si el educador tiene más de 1 función, se le asigne mediante este
+      módulo.
+    </alerta>
     <div class="card card-accent-primary">
       <div class="card-body">
         <alerta v-if="options.params.rama === 'G'" tipo="info">
