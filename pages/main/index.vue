@@ -26,7 +26,7 @@
           <b-table striped hover small responsive stacked="md" :items="grid.items" :fields="grid.fields">
             <template #cell(apellidoynombre)="data">
               <template v-if="grid.items.length < 15">
-                <div-persona :persona="data.item" />
+                <div-persona :persona="data.item" :dnioculto="true" />
               </template>
               <template v-else>{{ data.item.apellidoynombre }}</template>
             </template>
