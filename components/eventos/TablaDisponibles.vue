@@ -53,7 +53,10 @@
                     </button>
                   </template>
                   <template v-else>
-                    <button v-promise-btn class="btn btn-success" @click="anotarmeModal(data.item)">Anotarme</button>
+                    <template v-if="!data.item.cupo"> Sin Cupo </template>
+                    <template v-else>
+                      <button v-promise-btn class="btn btn-success" @click="anotarmeModal(data.item)">Anotarme</button>
+                    </template>
                   </template>
                 </template>
                 <template v-else>
