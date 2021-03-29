@@ -7,19 +7,20 @@
           <b-nav-item :active="tab === 2" @click="tabs(2, 'bajas')"> Bajas </b-nav-item>
         </b-nav>
       </div>
+      <download-excel
+        v-if="tab === 1"
+        :fetch="fetchDataExport"
+        :before-generate="startDownload"
+        :before-finish="finishDownload"
+        :fields="xls_campos"
+        :name="$moment(evento.evento_fin).format('YYYYMMDD') + ' - ' + evento.evento + '.xls'"
+        class="btn btn-success m-2 mt-4"
+      >
+        Exportar
+      </download-excel>
       <v-server-table ref="tabla" :columns="columns" :options="options" url="/eventos/inscriptos">
         <template slot="afterLimit">
-          <download-excel
-            v-if="tab === 1"
-            :fetch="fetchDataExport"
-            :before-generate="startDownload"
-            :before-finish="finishDownload"
-            :fields="xls_campos"
-            :name="$moment(evento.evento_fin).format('YYYYMMDD') + ' - ' + evento.evento + '.xls'"
-            class="btn btn-success m-2 mt-4"
-          >
-            Exportar
-          </download-excel>
+          <!-- aca iba el boton de exportar, arreglar a futuro-->
         </template>
         <template slot="persona.apellidoynombre" slot-scope="props">
           <div-persona :persona="props.row.persona" />
