@@ -84,7 +84,7 @@
               <b-form-select v-model="evento.participa" size="sm">
                 <option v-if="!user.is.grupo" value="Z">Toda mi la Zona</option>
                 <option v-if="user.is.grupo || user.is.distrito" value="D">Todo el Distrito</option>
-                <option value="P">Solo mi Organismo (Privado)</option>
+                <option v-if="user.is.grupo" value="P">Solo mi Organismo (Privado)</option>
                 <!--
                 <option v-if="user.is.zona" value="R">Toda mi la Region</option>
                 -->

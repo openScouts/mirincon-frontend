@@ -41,10 +41,11 @@
           </template>
           <template #cell()="data">
             <div class="text-center">
-              <template v-if="data.item.beneficiarios && user.is.grupo">
+              <template v-if="data.item.beneficiarios && user.is.grupo && user.persona.adulto">
                 <b-button variant="info" :to="'/main/eventos/' + data.item.uuid">Avanzado</b-button>
               </template>
               <template v-else>
+                <!-- Esta vista la muestro a beneficiarios y adultos que no trabajan en grupo -->
                 <template v-if="validoEstadoEvento(data.item)">
                   <template v-if="data.item.inscripto_uuid">
                     <button v-promise-btn class="btn btn-danger" @click="darDeBajaInscripto(data.item.inscripto_uuid)">
