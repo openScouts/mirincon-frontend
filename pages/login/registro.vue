@@ -16,11 +16,21 @@
       <b-form-input v-model="documento" name="documento" type="number" placeholder="Ingrese su Documento" />
     </b-input-group>
     <div v-if="paso === 2" title="Ingreso de Datos">
-      <h5 class="text-center">Bienvenid@ {{ formulario.nombre }}</h5>
+      <h5 class="text-center">Bienvenid@</h5>
+      <!-- {{ formulario.nombre }} -->
       <p v-if="formulario.organismo_id">
         <strong>Organismos:</strong>
         Nro. {{ formulario.organismo_id }} - {{ formulario.organismo }}
       </p>
+
+      <div class="form-group">
+        <label class="control-label">Ingrese su apellido</label>
+        <input v-model="formulario.apellido" type="text" class="form-control input-sm" required="required" />
+      </div>
+      <div class="form-group">
+        <label class="control-label">Ingrese su nombre</label>
+        <input v-model="formulario.nombre" type="text" class="form-control input-sm" required="required" />
+      </div>
 
       <div class="form-group">
         <label>Ingrese su Fecha de Nacimiento</label>
