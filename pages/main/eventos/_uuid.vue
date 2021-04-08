@@ -16,8 +16,8 @@
         <h5>Buscando Datos .......</h5>
       </div>
       <div v-else>
-        <template v-if="dataset.length === 0">
-          <h5>No se encontraron eventos disponibles</h5>
+        <template v-if="dataset_bk.length === 0">
+          <vacio texto="No se encontraron personas para la nomina"></vacio>
         </template>
         <template v-else>
           <div class="p-2">
@@ -30,10 +30,10 @@
               <div-persona :persona="data.item.persona" />
             </template>
             <template #cell(funcion)="data">
-              <div-funciones :funciones="data.item.persona.funciones" />
+              <div-funciones :key="data.item.persona.uuid" :funciones="data.item.persona.funciones" />
             </template>
 
-            <template #cell(estadoss)="data">
+            <template #cell(estado)="data">
               <template v-if="data.item.inscripto_uuid">
                 <div class="text-success"><i class="fas fa-thumbs-up" /> Si Participa</div>
               </template>
@@ -78,7 +78,9 @@
 </template>
 
 <script>
+import Vacio from '~/components/genericos/Vacio.vue'
 export default {
+  components: { Vacio },
   data() {
     return {
       columns: [
@@ -86,15 +88,15 @@ export default {
         { label: 'Función', key: 'funcion' },
         {
           label: 'Estado',
-          key: 'inscripto_uuid',
-          // formatter: (value, key, item) => {
+          key: 'estado',
+          /*
           formatter: (item) => {
             if (item.inscripto_uuid) {
               return 'Si Participa'
             } else {
               return 'No participa'
             }
-          },
+          }, */
         },
         { label: 'Opciones', key: 'opciones' },
       ],
@@ -168,3 +170,18 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+* tr th:nth-child(0) {
+  width: 30% !important;
+}
+* tr th:nth-child(2) {
+  width: 30% !important;
+}
+* tr th:nth-child(3) {
+  width: 30% !important;
+}
+* tr th:nth-child(4) {
+  width: 10% !important;
+}
+</style>
