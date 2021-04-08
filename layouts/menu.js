@@ -190,6 +190,12 @@ export default {
           acl: 'administrador.usuarios',
         },
         {
+          name: 'Registro Pendiente',
+          url: '/administrador/registro_pendiente',
+          icon: 'fas fa-user',
+          acl: 'administrador.permisos',
+        },
+        {
           name: 'Permisos',
           url: '/administrador/usuarios/permisos',
           icon: 'fas fa-user',
