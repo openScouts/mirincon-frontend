@@ -26,8 +26,8 @@
           <div class="col-md-6">
             <div class="form-group">
               <label class="control-label">Organismo</label>
-              <select-organismos v-model="form.organismos_id"></select-organismos>
-              <error input="maps" />
+              <select-organismos v-model="form.organismo_id"></select-organismos>
+              <error input="organismo_id" />
             </div>
             <div class="form-group">
               <label class="control-label">Funcion</label>
