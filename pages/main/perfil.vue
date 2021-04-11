@@ -4,6 +4,11 @@
       <titulo>Mi Datos Personales</titulo>
     </template>
     <b-row>
+      <b-col sm="12" lg="12">
+        <alerta v-if="!user.login.datos_completos" tipo="error">
+          Detectamos que te falta ingresar tu numero de celular, es importante que completes tus datos personales.
+        </alerta>
+      </b-col>
       <b-col sm="12" lg="3">
         <div class="text-center">
           <img id="urlFoto" :src="urlFoto" class="img-fluid img-thumbnail" alt="Foto" />
