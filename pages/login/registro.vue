@@ -66,25 +66,14 @@
       </template>
       <div class="form-group">
         <label class="control-label">Apellido</label>
-        <input
-          v-model="formulario.apellido"
-          :disabled="!show_formulario_full"
-          type="text"
-          class="form-control input-sm"
-        />
+        <input v-model="formulario.apellido" type="text" class="form-control input-sm" />
         <error input="apellido" />
       </div>
       <div class="form-group">
         <label class="control-label">Nombre</label>
-        <input
-          v-model="formulario.nombre"
-          :disabled="!show_formulario_full"
-          type="text"
-          class="form-control input-sm"
-        />
+        <input v-model="formulario.nombre" type="text" class="form-control input-sm" />
         <error input="nombre" />
       </div>
-
       <div class="form-group">
         <label>Fecha de nacimiento</label>
         <div class="row">
