@@ -173,10 +173,10 @@
 </template>
 
 <script>
-import modalMailMasivo from '@/components/eventos/detalle/EventoMailMasivo'
-import detalleAgregarInscriptos from '@/components/eventos/detalle/EventoDetalleAgregarInscriptos'
-import detalleEquipo from '@/components/eventos/detalle/EventoDetalleEquipo'
-import detalleInscriptos from '@/components/eventos/detalle/EventoDetalleInscripto'
+import modalMailMasivo from '@/components/eventos/detalle/EventoMailMasivo.vue'
+import detalleAgregarInscriptos from '@/components/eventos/detalle/EventoDetalleAgregarInscriptos.vue'
+import detalleEquipo from '@/components/eventos/detalle/EventoDetalleEquipo.vue'
+import detalleInscriptos from '@/components/eventos/detalle/EventoDetalleInscripto.vue'
 
 export default {
   meta: {

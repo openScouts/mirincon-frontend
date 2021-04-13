@@ -94,7 +94,7 @@
 
 <script>
 import Vue from 'vue'
-import modalEditar from './modalEditarEstadoCursante'
+import modalEditar from './modalEditarEstadoCursante.vue'
 
 Vue.component('ModalEditar', modalEditar)
 export default {

@@ -93,7 +93,7 @@
 </template>
 
 <script>
-import GestionarTP from '@/components/formacion/trabajos/gestionarTpModal'
+import GestionarTP from '@/components/formacion/trabajos/gestionarTpModal.vue'
 export default {
   components: {
     GestionarTP,

@@ -1,8 +1,8 @@
 <template>
   <CSidebar fixed :minimize="minimize" :show.sync="show">
     <CSidebarBrand to="/">
-      <img src="/img/logo_blanco.svg" class="c-sidebar-brand-full" width="118," height="46," alt="Logo" />
-      <img src="/img/logo_blanco.svg" height="46," alt="Logo" class="c-sidebar-brand-minimized" />
+      <img src="../../static/img/logo_blanco.svg" class="c-sidebar-brand-full" width="118," height="46," alt="Logo" />
+      <img src="../../static/img/logo_blanco.svg" height="46," alt="Logo" class="c-sidebar-brand-minimized" />
     </CSidebarBrand>
 
     <div>

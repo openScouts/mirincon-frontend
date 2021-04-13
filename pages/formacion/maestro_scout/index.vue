@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import pieGenerico from '~/components/genericos/charts/PieGenerico'
+import pieGenerico from '~/components/genericos/charts/PieGenerico.vue'
 export default {
   meta: {
     auth: { permiso: 'formacion.maestro_scout' },

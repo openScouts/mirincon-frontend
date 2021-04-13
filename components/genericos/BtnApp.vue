@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style ang="sass" scoped>
+<style scoped>
 .btn-app {
   display: block;
   width: 100%;

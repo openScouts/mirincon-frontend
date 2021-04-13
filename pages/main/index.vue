@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import Novedades from '@/components/main/NovedadesMensajes'
+import Novedades from '@/components/main/NovedadesMensajes.vue'
 export default {
   components: { Novedades },
   data() {

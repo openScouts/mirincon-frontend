@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import Experiencias from '@/components/formacion/persona/experiencias'
-import Habilitaciones from '@/components/formacion/persona/habilitaciones'
-import InsigniaMadera from '@/components/formacion/persona/insigniaMadera'
+import Experiencias from '@/components/formacion/persona/experiencias.vue'
+import Habilitaciones from '@/components/formacion/persona/habilitaciones.vue'
+import InsigniaMadera from '@/components/formacion/persona/insigniaMadera.vue'
 
 export default {
   components: { InsigniaMadera, Experiencias, Habilitaciones },

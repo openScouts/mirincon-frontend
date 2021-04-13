@@ -93,7 +93,7 @@
 
 <script>
 import Vue from 'vue'
-import modalEditar from '@/components/formacion/experiencia/modalEditarEstadoCursante'
+import modalEditar from '@/components/formacion/experiencia/modalEditarEstadoCursante.vue'
 
 Vue.component('ModalEditar', modalEditar)
 export default {

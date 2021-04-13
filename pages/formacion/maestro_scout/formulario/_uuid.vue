@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import InsigniaMadera from '~/components/formacion/persona/insigniaMadera'
+import InsigniaMadera from '~/components/formacion/persona/insigniaMadera.vue'
 export default {
   components: { InsigniaMadera },
   meta: {

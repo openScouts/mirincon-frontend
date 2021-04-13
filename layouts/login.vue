@@ -6,7 +6,7 @@
     <div class="main">
       <div class="col-md-12 col-sm-12">
         <a href="https://openscouts.com.ar">
-          <img id="logo-openscouts" src="/img/openscouts.png" class="img-fluid p-4" />
+          <img id="logo-openscouts" src="../static/img/openscouts.png" class="img-fluid p-4" />
         </a>
         <div class="login-form">
           <nuxt />
@@ -15,7 +15,7 @@
       <div class="text-center">
         <br />
         <a href="https://play.google.com/store/apps/details?id=ar.com.openscouts.mirincon.twa">
-          <img src="/img/google-play.png" style="height: 50px" />
+          <img src="../static/img/google-play.png" style="height: 50px" />
           <br />
         </a>
         <br />

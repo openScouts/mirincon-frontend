@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import modalPassword from '@/components/administracion/password'
+import modalPassword from '@/components/administracion/password.vue'
 
 export default {
   // @PENDIENTE -> Agregar ultimo login
