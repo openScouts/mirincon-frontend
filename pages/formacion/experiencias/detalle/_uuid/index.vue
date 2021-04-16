@@ -47,6 +47,18 @@
     <br />
     <div class="card card-accent-primary">
       <v-server-table ref="tabla" :columns="columns" :options="options" url="/formacion/participantes">
+        <template #afterLimit>
+          <download-excel
+            :fetch="fetchDataExport"
+            :before-generate="startDownload"
+            :before-finish="finishDownload"
+            :fields="xls_campos"
+            :name="$moment(curso.fecha).format('YYYYMMDD') + ' - ' + curso.nombre + '.xls'"
+            class="btn btn-success m-2 mt-4"
+          >
+            Exportar
+          </download-excel>
+        </template>
         <template slot="datos" slot-scope="props">
           <div-persona :persona="props.row.persona" />
         </template>
@@ -87,7 +99,7 @@
         </template>
       </v-server-table>
     </div>
-    <modal-editar ref="modalEditar" :curso="curso" :get-contador="getContador" @recargarDatos="recargar" />
+    <modal-editar ref="modalEditar" :curso="curso" @recargarDatos="recargar" />
   </ContentWrapper>
 </template>
 
@@ -118,6 +130,39 @@ export default {
       curso: {},
       contador: {},
       total: 0,
+      xls_campos: {
+        Participante: 'persona.apellidoynombre',
+        Documento: 'persona.documento',
+        organismo: {
+          field: 'persona.funciones',
+          callback: (value) => {
+            let out = ''
+            try {
+              value.forEach((element) => {
+                out = out + element.organismo_full + ' <br/>'
+              })
+            } catch (e) {
+              out = ''
+            }
+            return out
+          },
+        },
+        rama: {
+          field: 'rama',
+          callback: (value) => {
+            const out = this.$getRama(value)
+            return out.texto
+          },
+        },
+        estado: 'estado',
+        libro_folio: 'libro_folio',
+        experiencia: {
+          field: 'experiencia',
+          callback: (value) => {
+            return this.curso.nombre
+          },
+        },
+      },
     }
   },
   created() {
@@ -133,6 +178,27 @@ export default {
       this.$refs.tabla.refresh()
       this.getContador()
     },
+
+    /** **********************************************************************************************
+     * Manejo el Boton Download !!
+     ************************************************************************************************ */
+    fetchDataExport() {
+      return this.$axios
+        .get('/formacion/participantes', {
+          params: {
+            curso_uuid: this.options.params.curso_uuid,
+            page: 1,
+            limit: 9999,
+          },
+        })
+        .then((response) => {
+          return response.data.data
+        })
+    },
+    startDownload() {
+      this.$noti('Se esta generando la exportacion, Aguarde !')
+    },
+    finishDownload() {},
     puedeEditar() {
       return this.$can('formacion.experiencias.abm')
     },

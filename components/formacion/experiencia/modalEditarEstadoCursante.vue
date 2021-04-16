@@ -37,6 +37,11 @@
         </div>
       </div>
     </div>
+    <!--
+    <div v-if="curso.origen === 'M'" class="form-group">
+      <label class="control-label">Observaciones</label>
+    </div>
+    -->
     <!-- SI Esta pendiente de TP no permito corregir, a menos que tenga realmente un tp !!-->
     <div id="estado_id" class="form-group">
       <select v-model="form.estado_id" class="form-control" required="required">
@@ -59,6 +64,7 @@ export default {
   },
   props: {
     curso: {
+      // paso informacion de la experiencia, para ver si valida rama
       type: Object,
       required: true,
     },

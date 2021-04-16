@@ -93,6 +93,9 @@ export default {
       return this.$axios.put('/formacion/participantes', this.form).then(() => {
         this.form = {}
         this.$refs.myModalRef.hide()
+        // IMPORTANTE
+        // al llamar el componente debeo pasar un parametro llamado @recargarDatos con la funcion que recarga los datos
+        this.$emit('recargarDatos')
       })
     },
     getEstados() {

@@ -3,7 +3,7 @@
   <div class="input-group">
     <select
       v-model="organismos_id"
-      class="form-control"
+      class="form-control form-control-sm"
       :disabled="desactivado"
       @input="
         (event) => {
@@ -16,7 +16,7 @@
       </template>
     </select>
     <div v-if="filtro" class="input-group-append" :disabled="desactivado">
-      <b-dropdown slot="append" variant="success">
+      <b-dropdown slot="append" variant="success" size="sm" right>
         <template slot="button-content">
           <i class="fas fa-filter" />
           <span class="sr-only">Filtro</span>

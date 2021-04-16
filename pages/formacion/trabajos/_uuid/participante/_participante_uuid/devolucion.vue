@@ -27,9 +27,7 @@
         </div>
         <hr />
         <button v-promise-btn type="button" class="btn btn-success" @click="sendDevolucion">Cargar devolucion</button>
-        <b-button :to="'/formacion/trabajos/participante/' + this.$route.params.uuid" variant="danger">
-          Cancelar
-        </b-button>
+        <b-button :to="'/formacion/trabajos/participante/' + $route.params.uuid" variant="danger"> Cancelar </b-button>
       </div>
     </div>
   </ContentWrapper>

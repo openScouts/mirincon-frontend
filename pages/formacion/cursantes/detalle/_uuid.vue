@@ -88,15 +88,15 @@
         </div>
       </b-col>
     </b-row>
-    <modal-editar ref="modalEditar" />
+    <modal-editar ref="modalEditar" @recargarDatos="recargar" />
   </ContentWrapper>
 </template>
 
 <script>
 import Vue from 'vue'
 import modalEditar from './modalEditarEstadoCursante.vue'
-
 Vue.component('ModalEditar', modalEditar)
+
 export default {
   meta: {
     auth: { permiso: 'formacion.cursantes' },
@@ -106,7 +106,6 @@ export default {
       persona: {},
       datos: {},
       persona_full: {},
-
       grid: {
         // experiencia
         fields: [
@@ -141,6 +140,9 @@ export default {
       this.$axios.get('/formacion/experiencias/' + this.uuid).then((response) => {
         this.grid.items = response.data.data
       })
+    },
+    recargar() {
+      this.getExperiencias()
     },
   },
 }

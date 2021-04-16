@@ -39,7 +39,7 @@
             <button v-promise-btn class="btn-block btn btn-success btn-sm" @click="enviarDatos">Guardar</button>
             <input class="btn-block btn btn-primary btn-sm" value="ReCargar Datos" @click="getData()" />
             <nuxt-link
-              :to="'/formacion/experiencias/detalle/' + this.$route.params.uuid"
+              :to="'/formacion/experiencias/detalle/' + $route.params.uuid"
               class="btn-block btn btn-danger btn-sm"
             >
               Cancelar

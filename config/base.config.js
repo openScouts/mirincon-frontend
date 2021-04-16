@@ -17,7 +17,9 @@ module.exports = {
         name: 'description',
         content: 'Mi Rincon Scouts - OpenScouts',
       },
+      { name: 'userreport:mediaId', value: '275ee6b7-f711-426b-811f-a4bff548a681' },
     ],
+    script: [{ src: 'https://sak.userreport.com/openscouts/launcher.js', id: 'userreport-launcher-script' }],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       {

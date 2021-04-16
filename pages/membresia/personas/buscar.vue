@@ -12,7 +12,7 @@
         <b-form>
           <b-row>
             <b-col sm="12" lg="3">
-              <b-form-group label="Ingrese un parametro de busqueda">
+              <b-form-group label="Ingrese su busqueda">
                 <b-form-input
                   v-model="options.params.query"
                   size="sm"
@@ -21,25 +21,29 @@
                 />
               </b-form-group>
             </b-col>
-
-            <b-col sm="12" lg="2">
+            <b-col sm="12" lg="3">
               <b-form-group label="Seleccione un estado">
                 <b-form-select v-model="options.params.afiliado" :options="select.afiliados" size="sm" class="mb-3" />
               </b-form-group>
             </b-col>
-            <b-col sm="12" lg="2">
+            <b-col sm="12" lg="3">
               <b-form-group label="Seleccione un tipo">
                 <b-form-select v-model="options.params.tipo" :options="select.tipo" size="sm" class="mb-3" />
               </b-form-group>
             </b-col>
-            <b-col sm="12" lg="2">
+            <b-col sm="12" lg="3">
               <b-form-group label="Seleccione un tipo">
                 <b-form-select v-model="options.params.categoria" :options="select.categoria" size="sm" class="mb-3" />
               </b-form-group>
             </b-col>
-            <b-col sm="12" lg="2">
+            <b-col sm="12" lg="3">
               <b-form-group label="Seleccione una rama">
                 <select-ramas v-model="options.params.rama" size="sm" />
+              </b-form-group>
+            </b-col>
+            <b-col sm="12" lg="4">
+              <b-form-group label="Seleccione un organismos">
+                <select-organismos v-model="options.params.organismo" />
               </b-form-group>
             </b-col>
             <b-col sm="12" lg="12">

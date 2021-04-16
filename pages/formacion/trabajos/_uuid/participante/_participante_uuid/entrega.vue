@@ -27,7 +27,7 @@
               </div>
               <hr />
               <button v-promise-btn class="btn btn-success" @click="enviarRedactado">Enviar Trabajo Redactado</button>
-              <b-button :to="'/formacion/trabajos/participante/' + this.$route.params.uuid" variant="danger">
+              <b-button :to="'/formacion/trabajos/participante/' + $route.params.uuid" variant="danger">
                 Cancelar
               </b-button>
             </div>

@@ -28,6 +28,11 @@
                 <b-form-select v-model="options.params.tipo" :options="select.tipo" size="sm" class="mb-3" />
               </b-form-group>
             </b-col>
+            <b-col sm="12" lg="4">
+              <b-form-group label="Seleccione un organismos">
+                <select-organismos v-model="options.params.organismo" />
+              </b-form-group>
+            </b-col>
             <b-col sm="12" lg="12">
               <button class="btn btn-primary" @click.prevent="getBusqueda()">Buscar</button>
             </b-col>

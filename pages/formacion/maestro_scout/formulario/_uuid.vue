@@ -26,7 +26,7 @@
                   <select-ramas v-model="form.rama" :value="form.rama" />
                   <error input="rama"></error>
                 </div>
-                <template v-if="this.$route.params.uuid !== undefined">
+                <template v-if="$route.params.uuid !== undefined">
                   <b-form-group label="Numero de Registro de SAA">
                     <b-form-input
                       v-model="form.nro_registro"
@@ -49,7 +49,7 @@
                   </b-form-group>
                 </template>
               </div>
-              <template v-if="this.$route.params.uuid === undefined">
+              <template v-if="$route.params.uuid === undefined">
                 <button v-promise-btn class="btn btn-success m-2" @click="solicitarIM()">Solicitar IM</button>
               </template>
               <template v-else>
