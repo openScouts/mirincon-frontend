@@ -26,7 +26,10 @@
           <div class="col-md-6">
             <div class="form-group">
               <label class="control-label">Organismo</label>
+              <!--
               <select-organismos v-model="form.organismo_id"></select-organismos>
+              -->
+              <input v-model="form.organismo_id" class="form-control input-sm" type="numeric" required />
               <error input="organismo_id" />
             </div>
             <div class="form-group">
@@ -39,7 +42,8 @@
               <error input="comentario" />
             </div>
           </div>
-          <button v-promise-btn class="btn-block btn btn-success" @click="submitCrear">Crear Lugar</button>
+          <button v-promise-btn class="btn-block btn btn-success" @click="submitCrear">Crear usuario y Persona</button>
+          <button v-promise-btn class="btn-block btn btn-danger" @click="rechazar">Rechazar</button>
         </div>
       </div>
     </div>
@@ -77,6 +81,10 @@ export default {
           return err
         })
     },
+    rechazar() {
+      return this.$axios.delete('/administrador/registro_pendiente/', { data: this.form })
+    },
+
     getComboFunciones() {
       this.$axios.get('/varios/funciones/').then((response) => {
         this.comboFunciones = response.data
