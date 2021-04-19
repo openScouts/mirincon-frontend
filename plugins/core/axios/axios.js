@@ -51,8 +51,11 @@ export default function ({ $axios, redirect, app }) {
         app.$noti('Problema de comunicación con el servidor', 'danger', 'Se genero un error')
       } else if (error.response.status === 401) {
         // Error de Login.
-        app.$noti('Debe hacer login', 'danger', 'Session Finalizado')
-        redirect('/login')
+        // redirect('/login')
+        if (window.location.pathname !== '/login') {
+          app.$noti('Debe hacer login', 'danger', 'Session Finalizado')
+          window.location.replace('/login')
+        }
       } else if (error.response.status === 403) {
         app.$noti('Usted no tiene permisos para realizar dicha acción', 'danger', 'Problemas de Permisos')
       } else if (error.response.status === 418) {
