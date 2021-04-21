@@ -77,6 +77,7 @@ export default {
         items: [],
       },
       xls_campos: {
+        Organismo: 'organismo',
         Experiencia: 'experiencia',
         Estado: 'estado',
         Rama: {

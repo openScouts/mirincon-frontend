@@ -1,9 +1,9 @@
 <template>
-  <div class="row">
-    <div class="centrado col-12">
+  <div class="centrado row">
+    <div class="col-12">
       <i class="fas os-canoa fa-3x" />
     </div>
-    <div class="centrado col-12">
+    <div class="col-12">
       <p>{{ texto }}</p>
     </div>
   </div>
@@ -23,19 +23,27 @@ export default {
 
 <style scoped>
 .row {
-  margin: 30px;
+  margin: 10px;
 }
+
 .centrado {
   width: 100%;
   color: #e0e0e0;
-
   /* IMPORTANTE */
-
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-weight: unset;
   font-size: 1.5em;
+}
+
+.centrado:hover {
+  color: #7e7e7e;
+}
+
+.centrado:hover p::after,
+.centrado:hover p::before {
+  content: ' === ';
 }
 </style>
