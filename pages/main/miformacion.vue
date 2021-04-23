@@ -16,7 +16,7 @@
 
     <b-card no-body class="card-accent-primary">
       <!-- v-show="gridFormacion.items.length"-->
-      <div slot="header"><span class="cis-area-ams" /> Experiencias Específicas para la Función</div>
+      <div slot="header"><span class="cis-area-ams" /> Experiencias Específicas para la Función (Formación Avanzada)</div>
       <experiencias tipo="FA" :uuid="personaUUID" />
     </b-card>
 

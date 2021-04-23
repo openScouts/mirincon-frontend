@@ -184,7 +184,7 @@
                   </div>
                   <div class="card card-accent-primary">
                     <div class="card-header" :uuid="uuid">
-                      <span class="fas os-area-ams" /> Experiencias Específicas para la Función
+                      <span class="fas os-area-ams" /> Experiencias Específicas para la Función (Formación Avanzada)
                     </div>
                     <experiencias :uuid="uuid" tipo="FA" />
                   </div>
