@@ -30,7 +30,17 @@
           <template #cell(pauta)="data">
             <button class="btn btn-primary" @click="modalPauta(data.item.pauta)">Ver Pauta</button>
           </template>
-          <template #cell(fecha_evento)="data">{{ data.item.fecha_evento | DateTime }}</template>
+          <template #cell(fecha_evento)="data">
+            <b-col sm="10">
+              <div class="text-muted">
+                <span>Fecha Evento :</span>
+                {{ data.item.fecha_evento | DateTime }}
+                <br />
+                <span>Cierre Inscripcion. :</span>
+                {{ data.item.cierre_inscripcion | Date }} 23:59
+              </div>
+            </b-col>
+          </template>
           <template #cell(estado)="data">
             <template v-if="data.item.inscripto_uuid">
               <div class="text-success"><i class="fas fa-thumbs-up" /> Yo Participo</div>
@@ -112,7 +122,7 @@ export default {
       columns: [
         { label: 'Evento', key: 'evento' },
         { label: 'Costo', key: 'costo' },
-        { label: 'Fecha Comienzo', key: 'fecha_evento' },
+        { label: 'Fechas', key: 'fecha_evento' },
         { label: 'Pauta', key: 'pauta' },
         { label: 'Mi Estado', key: 'estado' },
         { label: 'Opciones', key: 'opciones' },
