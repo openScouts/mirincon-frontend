@@ -182,8 +182,14 @@
                       <habilitaciones :uuid="uuid" />
                     </div>
                   </div>
-                  <div id="detalleFormacion" class="card card-accent-primary">
-                    <!-- v-show="gridFormacion.items.length"-->
+                  <div class="card card-accent-primary">
+                    <div class="card-header" :uuid="uuid">
+                      <span class="fas os-area-ams" /> Experiencias Específicas para la Función
+                    </div>
+                    <experiencias :uuid="uuid" tipo="FA" />
+                  </div>
+
+                  <div class="card card-accent-primary">
                     <div class="card-header" :uuid="uuid">
                       <span class="fas os-area-ams" /> Mis Experiencias Realizadas
                     </div>

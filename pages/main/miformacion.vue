@@ -3,7 +3,7 @@
     <template slot="titulo">
       <titulo><i class="os-area-ams" />Mi Estado de Formación</titulo>
     </template>
-    <b-card id="detalleIM" no-body class="card-accent-primary">
+    <b-card no-body class="card-accent-primary">
       <!-- v-show="gridIm.items.length"  -->
       <div slot="header"><span class="fas cis-im" /> Datos de Insignia de Madera</div>
       <insignia-madera :uuid="personaUUID" />
@@ -13,7 +13,14 @@
       <div slot="header"><span class="fas cis-im" /> Mis Habilitaciones</div>
       <habilitaciones :uuid="personaUUID" />
     </b-card>
-    <b-card id="detalleFormacion" no-body class="card-accent-primary">
+
+    <b-card no-body class="card-accent-primary">
+      <!-- v-show="gridFormacion.items.length"-->
+      <div slot="header"><span class="cis-area-ams" /> Experiencias Específicas para la Función</div>
+      <experiencias tipo="FA" :uuid="personaUUID" />
+    </b-card>
+
+    <b-card no-body class="card-accent-primary">
       <!-- v-show="gridFormacion.items.length"-->
       <div slot="header"><span class="cis-area-ams" /> Mis Experiencias Realizadas</div>
       <experiencias :uuid="personaUUID" />

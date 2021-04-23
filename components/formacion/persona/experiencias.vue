@@ -60,6 +60,7 @@ export default {
   props: {
     // Esto lo uso porque el componente lo llamo desde otros componentes
     uuid: { type: String, default: 'uuid' },
+    tipo: { type: String, default: 'CO' },
   },
   data() {
     return {
@@ -130,7 +131,7 @@ export default {
       })
     },
     getExperiencias() {
-      this.$axios.get('/formacion/experiencias/' + this.personaUUID).then((response) => {
+      this.$axios.get('/formacion/experiencias/' + this.personaUUID + '/' + this.tipo).then((response) => {
         this.grid.items = response.data.data
       })
     },
