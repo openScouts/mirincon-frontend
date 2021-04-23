@@ -37,7 +37,7 @@
                 <template v-if="datos.experiencias.length < 9999">
                   <b-form-select v-model="evento.ams_experiencias_id" size="sm">
                     <template v-for="tipo in datos.experiencias">
-                      <option :key="tipo.id" :value="tipo.id">(Esquema {{ tipo.esquema }}) - {{ tipo.nombre }}</option>
+                      <option :key="tipo.id" :value="tipo.id">{{ tipo.nombre }}</option>
                     </template>
                   </b-form-select>
                 </template>
