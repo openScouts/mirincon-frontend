@@ -7,11 +7,9 @@
           <b-nav-item :active="tab === 2" @click="tabs(2, 'bajas')"> Bajas </b-nav-item>
         </b-nav>
       </div>
-
       <v-server-table ref="tabla" :columns="columns" :options="options" url="/eventos/inscriptos">
-        <template #afterLimit>
+        <template #afterFilter>
           <download-excel
-            v-if="tab === 1"
             :fetch="fetchDataExport"
             :before-generate="startDownload"
             :before-finish="finishDownload"
@@ -19,7 +17,7 @@
             :name="$moment(evento.evento_fin).format('YYYYMMDD') + ' - ' + evento.evento + '.xls'"
             class="btn btn-success m-2 mt-4"
           >
-            Exportar
+            Exportar Inscriptos
           </download-excel>
         </template>
         <template slot="persona.apellidoynombre" slot-scope="props">
@@ -158,6 +156,12 @@ export default {
         dieta: 'persona.datos.alimentacion_especial_detalle',
         email: 'persona.datos.email',
         celular: 'persona.datos.celular',
+        fecha_inscripcion: {
+          field: 'f_inscripcion',
+          callback: (value) => {
+            return this.$moment(value).format('DD/MM/YYYY H:mm')
+          },
+        },
       },
     }
   },

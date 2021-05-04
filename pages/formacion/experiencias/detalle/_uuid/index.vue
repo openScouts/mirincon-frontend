@@ -47,7 +47,7 @@
     <br />
     <div class="card card-accent-primary">
       <v-server-table ref="tabla" :columns="columns" :options="options" url="/formacion/participantes">
-        <template #afterLimit>
+        <template #afterFilter>
           <download-excel
             :fetch="fetchDataExport"
             :before-generate="startDownload"

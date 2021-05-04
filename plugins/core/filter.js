@@ -15,7 +15,7 @@ export default {
       if (!fecha.isValid() || value === undefined) {
         return
       }
-      return fecha.format('DD/MM/YYYY  H:mm')
+      return fecha.format('DD/MM/YYYY H:mm')
     })
 
     Vue.filter('truncate', (text, length, clamp) => {

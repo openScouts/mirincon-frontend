@@ -124,6 +124,7 @@ export default {
   },
   methods: {
     getExperiencias() {
+      // si es nacion .. no muestra listado ...
       this.$axios.get('/formacion/experiencias').then((response) => {
         this.experiencias = response.data
       })

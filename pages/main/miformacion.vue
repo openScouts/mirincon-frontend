@@ -4,24 +4,20 @@
       <titulo><i class="os-area-ams" />Mi Estado de Formación</titulo>
     </template>
     <b-card no-body class="card-accent-primary">
-      <!-- v-show="gridIm.items.length"  -->
       <div slot="header"><span class="fas cis-im" /> Datos de Insignia de Madera</div>
       <insignia-madera :uuid="personaUUID" />
     </b-card>
     <b-card v-show="verHabilitaciones" id="detalleHabilitacion" no-body class="card-accent-primary">
-      <!-- v-show="gridHabilitacion.items.length"  -->
       <div slot="header"><span class="fas cis-im" /> Mis Habilitaciones</div>
       <habilitaciones :uuid="personaUUID" />
     </b-card>
-
     <b-card no-body class="card-accent-primary">
-      <!-- v-show="gridFormacion.items.length"-->
-      <div slot="header"><span class="cis-area-ams" /> Experiencias Específicas para la Función (Formación Avanzada)</div>
+      <div slot="header">
+        <span class="cis-area-ams" /> Experiencias Específicas para la Función (Formación Avanzada)
+      </div>
       <experiencias tipo="FA" :uuid="personaUUID" />
     </b-card>
-
     <b-card no-body class="card-accent-primary">
-      <!-- v-show="gridFormacion.items.length"-->
       <div slot="header"><span class="cis-area-ams" /> Mis Experiencias Realizadas</div>
       <experiencias :uuid="personaUUID" />
     </b-card>
@@ -46,7 +42,7 @@ export default {
   },
   head() {
     return {
-      titleTemplate: 'Mi Formacion - %s ',
+      titleTemplate: 'Mi Formacion - %s',
     }
   },
   computed: {
