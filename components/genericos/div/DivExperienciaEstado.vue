@@ -48,7 +48,7 @@ export default {
           out = {
             estado: 'Acreditado',
             color: 'text-success',
-            icono: 'fas fa-thumbs-up',
+            icono: 'fas fa-check',
           }
           break
         case 3:
@@ -56,7 +56,7 @@ export default {
           out = {
             estado: 'Pendiente TP',
             color: 'text-warning',
-            icono: 'fas fa-clock',
+            icono: 'fas fa-user-clock',
           }
           break
         case 4:
@@ -64,15 +64,16 @@ export default {
           out = {
             estado: 'Homologa',
             color: 'text-success',
-            icono: 'fas fa-thumbs-up',
+            icono: 'fas fa-check',
           }
           break
         case 5:
         case 'Recursar':
+        case 'No Acreditado':
           out = {
-            estado: 'Recursar',
+            estado: 'No Acreditado',
             color: 'text-danger',
-            icono: 'fas fa-thumbs-down',
+            icono: 'fas fa-times',
           }
           break
         case 6:
@@ -80,7 +81,7 @@ export default {
           out = {
             estado: 'Ausente',
             color: 'text-danger',
-            icono: 'fas fa-thumbs-down',
+            icono: 'fas fa-times',
           }
           break
       }
