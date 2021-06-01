@@ -79,7 +79,6 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     'bootstrap-vue/nuxt',
-    ['@nuxtjs/pwa', { icon: true }], //, { icon: false }
     '@nuxtjs/dotenv',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
@@ -137,7 +136,14 @@ module.exports = {
   /*
    ** Build configuration
    */
-  build: {},
+  build: {
+    middleware: {
+      headers: {
+        'Cache-Control': 'no-store',
+        Vary: '*',
+      },
+    },
+  },
   generate: {
     fallback: true,
   },
