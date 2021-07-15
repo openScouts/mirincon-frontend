@@ -35,7 +35,7 @@
           </template>
         </template>
 
-        <template v-if="!user.is.formador" slot="opciones" slot-scope="props">
+        <template v-if="!user.is.soloformador" slot="opciones" slot-scope="props">
           <btn-persona-ver :uuid="props.row.persona.uuid" />
           <!-- VALIDAR QUE SEA DUEñO DEL EVENTO !!!-->
           <template v-if="evento.soy_propietario">
